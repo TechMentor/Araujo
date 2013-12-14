@@ -1,0 +1,10 @@
+div#main {
+	background:#FF0;
+	clear:both;
+}
+
+div#main section {
+	margin: 1em;
+	border: 1px solid red;	
+}
+

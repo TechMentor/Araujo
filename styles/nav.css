@@ -1,0 +1,97 @@
+/* change the main <ul> into a horiztonal menu. */
+nav {
+	float: left;
+}
+
+nav ul {
+    background: #efefef;
+    background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
+    box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+    padding: 0 20px;
+    border-radius: 2px;
+    list-style: none; /* remove the bullets */
+    position: relative; /* absolutely position the <ul> relative to the <nav> */
+    display: inline-table; /* condense the width of the menu */
+}
+
+    /* The clearfix style rule will clear the floats used on the subsequent list items without the use of overflow:hidden, which would hide the sub menus and prevent them from appearing.*/
+    nav ul:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    /* turn the main <ul> into a horizontal menu */
+    nav ul li {
+        float: left;
+    }
+    
+    /* style the main <ul>'s <li>s  when they are being hovered over */
+    nav ul li:hover {
+        background: #4b545f;
+        background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+        background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+        background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);
+    }
+
+    
+    /* change the main <ul>'s <li>'s <a> color to white when its hovered over */
+    nav ul li:hover a {
+        color: #fff;
+    }
+    
+    /* display each anchor as a block with padding and no underline */
+    nav ul li a {
+        display: block;
+        padding: 2px 15px;
+        min-width: 100px;
+        color: #757575;
+        text-decoration: none;
+    }
+
+/* hide the sub <ul> */
+nav ul ul {
+    display: none;
+}
+
+/* when a main <ul>'s <li> is being hovered over, display its ul children */
+nav ul li:hover > ul {
+    display: block;
+}
+
+/* display the child <ul> as a block under the parent */
+nav ul ul {
+    background: #5f6975;    /* change background color to gray */
+    border-radius: 0px;     /* turn off the border radius to remove the round corners inherited from the parent */
+    padding: 0;
+    position: absolute;     /* position absolutely... */
+    top: 100%;              /* ... from their top (aka the bottom of their parent ) */ 
+}
+
+/*  display the child <ul>'s <li>s vertically again with borders */
+nav ul ul li {
+    float: none;                        /* remove the float inherited from parents thus making them vertical */
+    border-top: 1px solid #6b727c;
+    border-bottom: 1px solid #575f6a;
+    position: relative; 
+}
+
+/*  add padding to each child <ul>'s <li>'s anchor and change the text color to white */
+nav ul ul li a {
+    padding: 1px 15px;
+    color: #fff;
+    min-width: 100px;
+}
+
+/*  change the background color when each child <ul>'s <li>'s anchor is hovered  */           
+nav ul ul li a:hover {
+    background: #4b545f;
+}
+
+nav ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
