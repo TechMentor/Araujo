@@ -84,6 +84,9 @@
       <tr>
         <td>Restaurant</td>
         <td>Address</td>
+        <td>City</td>
+        <td>State</td>
+        <td>Zip</td>
         <td>Phone #</td>
         <td>Fax #</td>
         <td>Website</td>
@@ -92,7 +95,10 @@
       <?php for($i = 0; $i < count($restaurants); $i++) { ?>
       <tr>
         <td><?php htmlout($restaurants[$i]['Name']); ?></td>
-        <td><?php htmlout($restaurants[$i]['AddressOne'] . " " . $restaurants[$i]['AddressTwo'] . " " . $restaurants[$i]['City'] . ", " . $restaurants[$i]['State'] . " " . $restaurants[$i]['ZipCode']); ?></td>
+        <td><?php htmlout(trim($restaurants[$i]['AddressOne'] . " " . $restaurants[$i]['AddressTwo'])); ?></td>
+        <td><?php htmlout($restaurants[$i]['City']); ?></td>
+        <td><?php htmlout($restaurants[$i]['State']); ?></td>
+        <td><?php htmlout($restaurants[$i]['ZipCode']); ?></td>
         <td><?php htmlout($restaurants[$i]['PhoneNo']); ?></td>
         <td><?php htmlout($restaurants[$i]['FaxNo']); ?></td>
         <td><?php htmlout($restaurants[$i]['Website']); ?></td>

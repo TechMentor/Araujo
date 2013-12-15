@@ -14,9 +14,9 @@ function htmlout($text)
 
 function outputToText($content)
 {
-    1/0;
+    // 1/0;
     // opening for writng/append mode the results file in the log folder.
-    $h = fopen("C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\araujo_tc\log\results.txt", "a+");
+    $h = fopen("C:\\Program Files\\Apache Software Foundation\\Apache2.2\\htdocs\\araujo_tc\\log\\results.txt", "a+");
     
     // write the $content value to the log
     fwrite($h, $content);

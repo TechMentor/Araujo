@@ -1,12 +1,11 @@
 <?php
 	include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/helpers.inc.php';
-	throw new Exception();
 	session_start();
 	if(isset($_POST['name'])) {
 
 		try {
 			// Save the new vendor data.
-			$pdo = new PDO('mysql:host=localhost;dbname=techment_araujo', 'techment_zach', 'abcwxy');
+			include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
 
 			$sqlPrepared = null;
 			if($_POST['id'] == -1) {

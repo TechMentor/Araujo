@@ -7,7 +7,7 @@ function getVendorData() {
 	global $vendors;
 
 	// connect to db
-	include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/db.inc.php';
+	include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
 	
 	$sqlPrepared = $pdo->prepare("SELECT * FROM tblvendor");
 	$sqlPrepared->execute();

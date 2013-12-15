@@ -27,13 +27,15 @@ function restaurantEdit(id) {
 function restaurantSave(id) {
 	xmlrb = new XMLHttpRequest();
 	xmlrb.onreadystatechange = function() {                
-            alert('response:' + xmlrb.response + '\nStatus:' + xmlrb.status);
+            // alert('response:' + xmlrb.response + '\nStatus:' + xmlrb.status);
                 
             if(xmlrb.readyState == 4 && xmlrb.status == 510) {
-                alert('error: ' + xmlrb.response)
+                alert('response:' + xmlrb.response 
+                        + '\nStatus:' + xmlrb.status 
+                        + '\nError: ' + xmlrb.response)
             }
             else if(xmlrb.readyState == 4 && xmlrb.status == 200) {
-                    location.reload();
+                location.reload();
             }
 	}
 	xmlrb.open("POST", "../getdata/SaveRestaurant.php");

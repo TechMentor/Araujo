@@ -2,8 +2,6 @@ var vendorEditing = -1;
 
 function vendorEdit(id) {
 	vendorEditing = id;
-        
-        alert('Editing ' + id);
 
 	xmlra = new XMLHttpRequest();
 	xmlra.onreadystatechange = function() {

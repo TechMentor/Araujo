@@ -41,7 +41,8 @@
   <!-- Show login -->
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/login.inc.html.php'; ?>
   <!-- Include drop down queries -->
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetCategories.php'; ?>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetDropDowns.php'; ?>
+
 </header>
 <div id="main">
   <section id="form">
@@ -52,24 +53,24 @@
       
       <label class="col1">Category</label>
       <select id="categoryId" name="categoryId" >
-          <?php 
-            foreach ($Categories as $row){
-          ?>
-            <option value="<?php echo $row['CategoryID'] ?>"><?php echo $row['CategoryName'] ?></option>
-          <?php
-            }
-          ?>
+          <?php populateDropDown('Categories'); ?>
       </select>
       
       <label class="col2">Unit</label>
-      <select id="unitId" name="unitId" ></select>
+      <select id="unitId" name="unitId" >
+          <?php populateDropDown('Units'); ?>
+      </select>
       <br>
       
       <label class="col1">Responsible Party</label>
-      <select id="responsiblePartyId" name="responsiblePartyId" ></select>
+      <select id="responsiblePartyId" name="responsiblePartyId" >
+          <?php populateDropDown('ResponsibleParties'); ?>
+      </select>
 
       <label class="col2">Preferred Vendor</label>
-      <select id="preferredVendorId" name="preferredVendorId" ></select>
+      <select id="preferredVendorId" name="preferredVendorId" >
+          <?php populateDropDown('Vendors'); ?>
+      </select>
       <br>
       
       <label class="col1">Note</label>
@@ -98,10 +99,10 @@
       <tr>
         <td><?php htmlout($products[$i]['ProductName']); ?></td>
         <td><?php htmlout($products[$i]['CategoryID']); ?></td>
-		<td><?php htmlout($products[$i]['UnitID']); ?></td>
-		<td><?php htmlout($products[$i]['ResponsiblePartyID']); ?></td>
-		<td><?php htmlout($products[$i]['PreferredVendorID']); ?></td>
-		<td><?php htmlout($products[$i]['Note']); ?></td>
+        <td><?php htmlout($products[$i]['UnitID']); ?></td>
+        <td><?php htmlout($products[$i]['ResponsiblePartyID']); ?></td>
+        <td><?php htmlout($products[$i]['PreferredVendorID']); ?></td>
+        <td><?php htmlout($products[$i]['Note']); ?></td>
         <td><button name="<?php htmlout('eButton' . $i); ?>" onClick="productEdit(<?php htmlout($products[$i]['ID']); ?>)">Edit</button></td>
       </tr>
       <?php } ?>

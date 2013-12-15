@@ -1,0 +1,15 @@
+Ready State Constants
+ajrsConnectionNotOpen = 0;
+ajrsConnectionOpened = 1;
+ajrsRequestSent = 2;
+ajrsReceivingData = 3;
+ajrsDataReceived = 4;
+
+Status Constants
+ajstOK = 200;
+ajstMovedPermanently = 301;
+ajstNotMofied = 304;
+ajstUnauthorized = 401;
+ajstForbidden = 403;
+ajstNotFound = 404;
+ajstNotExtended = 510;
