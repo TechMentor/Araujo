@@ -24,7 +24,6 @@
 		min-width: 7em;
 		display:inline-block;		
 	}
-	}
 	#productName {
 		min-width: 60em;
 		display:inline-block;

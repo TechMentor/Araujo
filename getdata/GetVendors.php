@@ -1,14 +1,13 @@
 <?php
-	$vendors = array();
-	getVendorData();	
+include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';	
 	
 function getVendorData() {
 	// create global array variable called $vendors
-	global $vendors;
+	$vendors = array();
 
 	// connect to db
-	include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
-	
+        $pdo = getDBConnection();
+        
 	$sqlPrepared = $pdo->prepare("SELECT * FROM tblvendor");
 	$sqlPrepared->execute();
 
@@ -27,5 +26,7 @@ function getVendorData() {
 		$vendors[$ct]['CreatedOn'] = $next['CreatedOn'];
 		$ct++;
 	}
+        
+        return $vendors;
 }
 ?>

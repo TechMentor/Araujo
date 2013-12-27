@@ -1,11 +1,13 @@
 <?php
 	include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/helpers.inc.php';
-	session_start();
+	include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
+        
+        session_start();
 	if(isset($_POST['name'])) {
 
 		try {
 			// Save the new restaurant data.
-			include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
+                        $pdo = getDBConnection();
 
 			$sqlPrepared = null;
 			if($_POST['id'] == -1) {

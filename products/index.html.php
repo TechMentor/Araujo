@@ -42,39 +42,40 @@
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/login.inc.html.php'; ?>
   <!-- Include drop down queries -->
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetDropDowns.php'; ?>
-
+  <!-- Get tables -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetTables.php'; ?>
 </header>
 <div id="main">
   <section id="form">
     <form id="productEditor">
       <label class="col1">Product Name </label>
-      <input id="productName" name="productName" >
+      <input id="ProductName" name="productName" >
       <br>
       
       <label class="col1">Category</label>
-      <select id="categoryId" name="categoryId" >
+      <select id="CategoryID" name="categoryId" >
           <?php populateDropDown('Categories'); ?>
       </select>
       
       <label class="col2">Unit</label>
-      <select id="unitId" name="unitId" >
+      <select id="UnitID" name="unitId" >
           <?php populateDropDown('Units'); ?>
       </select>
       <br>
       
       <label class="col1">Responsible Party</label>
-      <select id="responsiblePartyId" name="responsiblePartyId" >
+      <select id="ResponsiblePartyID" name="responsiblePartyId" >
           <?php populateDropDown('ResponsibleParties'); ?>
       </select>
 
       <label class="col2">Preferred Vendor</label>
-      <select id="preferredVendorId" name="preferredVendorId" >
+      <select id="PreferredVendorID" name="preferredVendorId" >
           <?php populateDropDown('Vendors'); ?>
       </select>
       <br>
       
       <label class="col1">Note</label>
-      <input id="note" name="note" >
+      <input id="Note" name="note" >
       <br>
             
       <br>
@@ -85,28 +86,7 @@
   </section>
   <section id="list"> <br/>
     <br/>
-    <table border="1">
-      <tr>
-        <td>Product</td>
-        <td>Category</td>
-        <td>Unit</td>
-        <td>Responsible Party</td>
-        <td>Preferred Vendor</td>
-        <td>Note</td>
-        <td>Edit</td>
-      </tr>
-      <?php for($i = 0; $i < count($products); $i++) { ?>
-      <tr>
-        <td><?php htmlout($products[$i]['ProductName']); ?></td>
-        <td><?php htmlout($products[$i]['CategoryID']); ?></td>
-        <td><?php htmlout($products[$i]['UnitID']); ?></td>
-        <td><?php htmlout($products[$i]['ResponsiblePartyID']); ?></td>
-        <td><?php htmlout($products[$i]['PreferredVendorID']); ?></td>
-        <td><?php htmlout($products[$i]['Note']); ?></td>
-        <td><button name="<?php htmlout('eButton' . $i); ?>" onClick="productEdit(<?php htmlout($products[$i]['ID']); ?>)">Edit</button></td>
-      </tr>
-      <?php } ?>
-    </table>
+    <?php getTable("Products"); ?>
   </section>
 </div>
 

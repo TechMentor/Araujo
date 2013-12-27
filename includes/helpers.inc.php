@@ -19,7 +19,7 @@ function outputToText($content)
     $h = fopen("C:\\Program Files\\Apache Software Foundation\\Apache2.2\\htdocs\\araujo_tc\\log\\results.txt", "a+");
     
     // write the $content value to the log
-    fwrite($h, $content);
+    fwrite($h, "\n" . $content);
     
     // close the results.txt file.
     fclose($h);

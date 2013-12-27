@@ -5,12 +5,12 @@
 	if(isset($_GET['id'])) {
 		try {			
                         $pdo = getDBConnection();
-			$sqlPrepared = $pdo->prepare("SELECT * FROM tblrestaurant WHERE RestaurantID=:rid");
+			$sqlPrepared = $pdo->prepare("SELECT * FROM tblproduct WHERE ProductID=:rid");
 			$sqlPrepared->bindValue(":rid",$_GET['id']);
 			$sqlPrepared->execute();
 
 			if($next = $sqlPrepared->fetch()) {
-				htmlout($next['RestaurantName'] . "/-/" . $next['Address1'] . "/-/" . $next['Address2'] . "/-/" . $next['City'] . "/-/" . $next['State'] . "/-/" . $next['ZipCode'] . "/-/" . $next['PhoneNo'] . "/-/" . $next['FaxNo'] . "/-/" . $next['Website']);
+				htmlout($next['ProductName'] . "/-/" . $next['CategoryID'] . "/-/" . $next['UnitID'] . "/-/" . $next['ResponsiblePartyID'] . "/-/" . $next['PreferredVendorID'] . "/-/" . $next['Note'] );
 			}
 		} catch (PDOException $e) {
 		}

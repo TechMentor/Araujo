@@ -1,14 +1,14 @@
 <?php
-	$restaurants = array();
-	getRestaurantData();	
+
+include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
 
 function getRestaurantData() {
 	// import into this function the global array variable named $restaurants - see N2N p179
-	global $restaurants;
+	$restaurants = array();
 
 	// connect to db
-	include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
-
+        $pdo = getDBConnection();
+        
 	// create a prepared statement to get the records from the restaraunt table.
 	$sqlPrepared = $pdo->prepare("SELECT * FROM tblrestaurant");
 	
@@ -33,5 +33,7 @@ function getRestaurantData() {
 		$restaurants[$ct]['Website'] = $next['Website'];
 		$ct++;
 	}
+        
+        return $restaurants;
 }
 ?>

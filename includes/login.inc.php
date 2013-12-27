@@ -1,4 +1,5 @@
 <?php
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
 	// Enumerated values
 	define("PROGRAMMER", 1);
 	define("ADMIN", 4);
@@ -27,7 +28,7 @@
 
 		// Simple database check for username
 		try {
-			include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
+                        $pdo = getDBConnection();
 			$sqlPrepared = $pdo->prepare("SELECT * FROM tbluser WHERE loginname =:username");
 			$sqlPrepared->bindValue(":username",$uname);
 			$sqlPrepared->execute();
@@ -57,8 +58,10 @@
 	function userIsType($type) {
 		if(!isset($_SESSION['user_type'])) { return FALSE; }
 		switch($type) {
-			case "ADM": return ($_SESSION['user_type'] == constant("PROGRAMMER") || $_SESSION['user_type'] == constant("ADMIN")); 
-			case "USR": return ($_SESSION['user_type'] > 0);
+			case "ADM": 
+                            return ($_SESSION['user_type'] == constant("PROGRAMMER") || $_SESSION['user_type'] == constant("ADMIN")); 
+			case "USR": 
+                            return ($_SESSION['user_type'] > 0);
 		}
 		return FALSE;
 	}

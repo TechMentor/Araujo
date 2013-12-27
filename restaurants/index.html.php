@@ -44,6 +44,8 @@
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/nav.inc.html.php'; ?>
   <!-- Show login -->
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/login.inc.html.php'; ?>
+  <!-- Get tables -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetTables.php'; ?>
 </header>
 <div id="main">
   <section id="form">
@@ -80,32 +82,7 @@
   </section>
   <section id="list"> <br/>
     <br/>
-    <table border="1">
-      <tr>
-        <td>Restaurant</td>
-        <td>Address</td>
-        <td>City</td>
-        <td>State</td>
-        <td>Zip</td>
-        <td>Phone #</td>
-        <td>Fax #</td>
-        <td>Website</td>
-        <td>Edit</td>
-      </tr>
-      <?php for($i = 0; $i < count($restaurants); $i++) { ?>
-      <tr>
-        <td><?php htmlout($restaurants[$i]['Name']); ?></td>
-        <td><?php htmlout(trim($restaurants[$i]['AddressOne'] . " " . $restaurants[$i]['AddressTwo'])); ?></td>
-        <td><?php htmlout($restaurants[$i]['City']); ?></td>
-        <td><?php htmlout($restaurants[$i]['State']); ?></td>
-        <td><?php htmlout($restaurants[$i]['ZipCode']); ?></td>
-        <td><?php htmlout($restaurants[$i]['PhoneNo']); ?></td>
-        <td><?php htmlout($restaurants[$i]['FaxNo']); ?></td>
-        <td><?php htmlout($restaurants[$i]['Website']); ?></td>
-        <td><button name="<?php htmlout('eButton' . $i); ?>" onClick="restaurantEdit(<?php htmlout($restaurants[$i]['ID']); ?>)">Edit</button></td>
-      </tr>
-      <?php } ?>
-    </table>
+    <?php getTable("Restaurants"); ?>
   </section>
 </div>
 </body>

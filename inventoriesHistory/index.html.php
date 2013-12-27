@@ -24,7 +24,6 @@
 		min-width: 7em;
 		display:inline-block;		
 	}
-	}
 	#productName {
 		min-width: 60em;
 		display:inline-block;
@@ -41,18 +40,29 @@
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/nav.inc.html.php'; ?>
   <!-- Show login -->
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/login.inc.html.php'; ?>
+  <!-- Include drop down queries -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetDropDowns.php'; ?>
+  <!-- Get tables -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetTables.php'; ?>
 </header>
 <div id="main">
   <section id="form">
     <form id="inventoryHistoryProcessor">
       <label class="col1">Inventory Date </label>
       <input id="inventoryDate" name="inventoryDate" >
+      
       <label>Restaurant</label>
-      <select id="restaurantID" name="restaurantID" ></select>
+      <select id="restaurantID" name="restaurantID" >
+          <?php populateDropDown('Restaurants'); ?>
+      </select>
+      
       <label>Product</label>
-      <select id="productID" name="productID" ></select>
+      <select id="productID" name="productID" >
+          <?php populateDropDown('Products'); ?>
+      </select>
+      
       <label>Qty</label>
-      <select id="Qty" name="Qty" ></select>
+      <input id="Qty" name="Qty" >
       
       <button onClick="currentInventoryAdd(inventoryHistoryAdd)">Add</button>
       <button onClick="currentInventoryFilter(inventoryHistoryFilter)">Filter</button>
@@ -61,28 +71,7 @@
   </section>
   <section id="list"> <br/>
     <br/>
-    <table border="1">
-      <tr>
-        <td>Date</td>
-        <td>Restaurant</td>
-        <td>Product</td>
-        <td>Units</td>
-        <td>Qty</td>
-        <td>Created By</td>
-        <td>Created On</td>
-      </tr>
-      <?php for($i = 0; $i < count($inventoryHistory); $i++) { ?>
-      <tr>
-        <td><?php htmlout($inventoryHistory[$i]['InventoryDate']); ?></td>
-        <td><?php htmlout($inventoryHistory[$i]['RestaurantID']); ?></td>
-		<td><?php htmlout($inventoryHistory[$i]['ProductID']); ?></td>
-		<td><?php htmlout($inventoryHistory[$i]['UnitID']); ?></td>
-		<td><?php htmlout($inventoryHistory[$i]['Qty']); ?></td>
-		<td><?php htmlout($inventoryHistory[$i]['CreatedBy']); ?></td>
-		<td><?php htmlout($inventoryHistory[$i]['CreatedOn']); ?></td>
-      </tr>
-      <?php } ?>
-    </table>
+    <?php getTable("InventoryHistory"); ?>
   </section>
 </div>
 

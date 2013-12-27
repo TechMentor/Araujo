@@ -19,7 +19,6 @@ if(!isset($_SESSION['user_name']) && !isset($_SESSION['user_type']) || $_SESSION
 
 // login succeeded so get and show restaurants
 else {
-	include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetVendors.php';
 	include 'index.html.php';
 }
 ?>

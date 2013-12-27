@@ -1,12 +1,14 @@
 <?php
 	include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/helpers.inc.php';
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
+        
 	session_start();
 	if(isset($_POST['name'])) {
 
 		try {
 			// Save the new vendor data.
-			include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
-
+                        $pdo = getDBConnection();
+                        
 			$sqlPrepared = null;
 			if($_POST['id'] == -1) {
 				$sqlPrepared = $pdo->prepare("INSERT INTO tblvendor (vendorname, address1, address2, city, state, zipcode, createdby, createdon) values (:rname, :raddone, :raddtwo, :rcity, :rstate, :rzipcode, :ruser, now())");

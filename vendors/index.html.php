@@ -44,6 +44,8 @@
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/nav.inc.html.php'; ?>
   <!-- Show login -->
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/login.inc.html.php'; ?>
+  <!-- Get tables -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetTables.php'; ?>
 </header>
 <div id="main">
   <section id="form">
@@ -76,20 +78,7 @@
   </section>
   <section id="list"> <br/>
     <br/>
-    <table border="1">
-      <tr>
-        <td>Vendor</td>
-        <td>Address</td>
-        <td>Edit</td>
-      </tr>
-      <?php for($i = 0; $i < count($vendors); $i++) { ?>
-      <tr>
-        <td><?php htmlout($vendors[$i]['Name']); ?></td>
-        <td><?php htmlout($vendors[$i]['AddressOne'] . " " . $vendors[$i]['AddressTwo'] . " " . $vendors[$i]['City'] . ", " . $vendors[$i]['State'] . " " . $vendors[$i]['ZipCode']); ?></td>
-        <td><button name="<?php htmlout('eButton' . $i); ?>" onClick="vendorEdit(<?php htmlout($vendors[$i]['ID']); ?>)">Edit</button></td>
-      </tr>
-      <?php } ?>
-    </table>
+    <?php getTable("Vendors"); ?>
   </section>
 </div>
 
