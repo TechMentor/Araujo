@@ -6,3 +6,105 @@ I ran the query.
 Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
 Array
 Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Hello world; My id is 54
+$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Hello world; My id is 54
+$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Hello world; My id is 54
+$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Hello world; My id is 54
+$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Hello world; My id is 1
+$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+ProductName is Agua 
+I ran the query.
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Hello world; My id is 1
+$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+ProductName is Agua 
+ResponsiblePartyID is 1
+I ran the query.
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Hello world; My id is 1
+$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+ProductName is Agua 
+ResponsiblePartyID is 3
+I ran the query.
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Hello world; My id is 54
+$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+ProductName is Aceite para cocinar
+ResponsiblePartyID is 3
+I ran the query.
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Hello world; My id is 1
+$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+ProductName is Agua 
+ResponsiblePartyID is 3
+I ran the query.
+Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+Hello world; My id is 1
+$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+ProductName is  
+ResponsiblePartyID is 3
+I ran the query.
+2013-12-28Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28Hello world; My id is 1
+2013-12-28$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28ProductName is  Agua
+2013-12-28ResponsiblePartyID is 3
+2013-12-28I ran the query.
+2013-12-28 10:06:45Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:06:45Hello world; My id is 1
+2013-12-28 10:06:45$sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:06:46ProductName is  Agua
+2013-12-28 10:06:46ResponsiblePartyID is 3
+2013-12-28 10:06:46I ran the query.
+2013-12-28 10:16:06 Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:16:06 Hello world; My id is 54
+2013-12-28 10:16:06 $sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:16:06 ProductName is Aceite para cocinar
+2013-12-28 10:16:06 ResponsiblePartyID is 3
+2013-12-28 10:16:06 I ran the query.
+2013-12-28 10:20:02 Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:20:02 Hello world; My id is 1
+2013-12-28 10:20:02 $sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:20:02 ProductName is  Agua
+2013-12-28 10:20:02 ResponsiblePartyID is 3
+2013-12-28 10:20:02 I ran the query.
+2013-12-28 10:21:55 Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:21:55 Hello world; My id is 54
+2013-12-28 10:21:55 $sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:21:55 rCategoryID is 2
+2013-12-28 10:21:55 ResponsiblePartyID is 3
+2013-12-28 10:21:55 I ran the query.
+2013-12-28 10:22:18 Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:22:18 Hello world; My id is 54
+2013-12-28 10:22:18 $sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:22:18 rCategoryID is 2
+2013-12-28 10:22:18 ResponsiblePartyID is 3
+2013-12-28 10:22:18 I ran the query.
+2013-12-28 10:23:38 Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:23:38 Hello world; My id is 1
+2013-12-28 10:23:38 $sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:23:38 rCategoryID is 2
+2013-12-28 10:23:38 ResponsiblePartyID is 3
+2013-12-28 10:23:38 I ran the query.
+2013-12-28 10:46:25 Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:46:25 Hello world; My id is 1
+2013-12-28 10:46:25 $sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:46:25 rCategoryID is 2
+2013-12-28 10:46:25 ResponsiblePartyID is 3
+2013-12-28 10:46:25 I ran the query.
+2013-12-28 10:53:01 Update sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:53:01 Hello world; My id is 1
+2013-12-28 10:53:01 $sql is UPDATE tblproduct SET  ProductName = :rProductName,  CategoryID = :rCategoryID, UnitID = :rUnitID, ResponsiblePartyID = :rResponsiblePartyID, PreferredVendorID = :rPreferredVendorID, Note = :rNote, CreatedBy = :ruser,  CreatedOn = now()  WHERE ProductID = :rid
+2013-12-28 10:53:01 rCategoryID is 2
+2013-12-28 10:53:01 ResponsiblePartyID is 3
+2013-12-28 10:53:01 I ran the query.
