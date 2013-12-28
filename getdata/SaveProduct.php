@@ -37,20 +37,20 @@
 //            outputToText($sqlPrepared);
 
 //            $sqlPrepared->bindValue(":rProductName",NULLIF($_POST['ProductName'],0));            
-            $sqlPrepared->bindValue(":rCategoryID",NULLIF($_POST['CategoryID'],0));
-            $sqlPrepared->bindValue(":rUnitID",NULLIF($_POST['UnitID'],0));
-            $sqlPrepared->bindValue(":rResponsiblePartyID",NULLIF($_POST['ResponsiblePartyID'],0));
-            $sqlPrepared->bindValue(":rPreferredVendorID",NULLIF($_POST['PreferredVendorID'],0));
-            $sqlPrepared->bindValue(":rNote",NULLIF($_POST['Note'],0));
-            $sqlPrepared->bindValue(":ruser",$_SESSION['user_id']);
+//            $sqlPrepared->bindValue(":rCategoryID",NULLIF($_POST['CategoryID'],0));
+//            $sqlPrepared->bindValue(":rUnitID",NULLIF($_POST['UnitID'],0));
+//            $sqlPrepared->bindValue(":rResponsiblePartyID",NULLIF($_POST['ResponsiblePartyID'],0));
+//            $sqlPrepared->bindValue(":rPreferredVendorID",NULLIF($_POST['PreferredVendorID'],0));
+//            $sqlPrepared->bindValue(":rNote",NULLIF($_POST['Note'],0));
+//            $sqlPrepared->bindValue(":ruser",$_SESSION['user_id']);
 
-//            $sqlPrepared->bindValue(":rProductName",$_POST['ProductName']);            
-//            $sqlPrepared->bindValue(":rCategoryID", $_POST['CategoryID']);
-//            $sqlPrepared->bindValue(":rUnitID", $_POST['UnitID']);
-//            $sqlPrepared->bindValue(":rResponsiblePartyID", $_POST['ResponsiblePartyID']);
-//            $sqlPrepared->bindValue(":rPreferredVendorID", $_POST['PreferredVendorID']);
-//            $sqlPrepared->bindValue(":rNote", $_POST['Note']);
-//            $sqlPrepared->bindValue(":ruser", $_SESSION['user_id']);
+            $sqlPrepared->bindValue(":rProductName",$_POST['ProductName']);            
+            $sqlPrepared->bindValue(":rCategoryID", $_POST['CategoryID']);
+            $sqlPrepared->bindValue(":rUnitID", $_POST['UnitID']);
+            $sqlPrepared->bindValue(":rResponsiblePartyID", $_POST['ResponsiblePartyID']);
+            $sqlPrepared->bindValue(":rPreferredVendorID", $_POST['PreferredVendorID']);
+            $sqlPrepared->bindValue(":rNote", $_POST['Note']);
+            $sqlPrepared->bindValue(":ruser", $_SESSION['user_id']);
 
             
             $sqlPrepared->execute();
