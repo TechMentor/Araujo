@@ -46,7 +46,7 @@ function getInventoryHistoryTable() {
         echo '<td>' . $inventoryHistory[$i]['Quantity'] . '</td>';
         echo '<td>' . $inventoryHistory[$i]['CreatedBy'] . '</td>';
         echo '<td>' . $inventoryHistory[$i]['CreatedOn'] . '</td>';
-        echo '<td><button name="'. 'eButton' . $i . '" onClick="inventoryHistoryEdit(' . $products[$i]['ID'] . ')">Edit</button></td>';
+        echo '<td><button name="'. 'eButton' . $i . '" onClick="inventoryHistoryEdit(' . $inventoryHistory[$i]['ID'] . ')">Edit</button></td>';
         echo '</tr>';
     }
     echo '</table>';
