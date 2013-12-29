@@ -29,7 +29,7 @@
 		display:inline-block;
 	}
 </style>
-<script src="../scripts/inventoryHistory.js"></script>
+<script src="../scripts/inventory.js"></script>
 </head>
 <body>
 <header>
@@ -49,7 +49,7 @@
   <section id="form">
     <form id="inventoryHistoryProcessor">
       <label class="col1">Inventory Date </label>
-      <input id="inventoryDate" name="inventoryDate" >
+      <input id="inventoryDate" name="inventoryDate" value="<?php htmlout(date('m-d-y')) ?>">
       
       <label>Restaurant</label>
       <select id="restaurantID" name="restaurantID" >
@@ -64,7 +64,8 @@
       <label>Qty</label>
       <input id="Qty" name="Qty" >
       
-      <button onClick="currentInventoryAdd(inventoryHistoryAdd)">Add</button>
+      <!-- <button onClick="currentInventoryAdd(inventoryHistoryAdd)">Add</button> -->
+      <button onClick="currentInventoryAdd()">Add</button>
       <button onClick="currentInventoryFilter(inventoryHistoryFilter)">Filter</button>
       <button onClick="inventoryHistoryClear()">Clear</button>
     </form>
