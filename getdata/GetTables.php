@@ -31,8 +31,8 @@ function getInventoryHistoryTable() {
     echo '<td>Product</td>';    
     echo '<td>Units</td>';
     echo '<td>Qty</td>';
-    echo '<td>Created By</td>';
-    echo '<td>Created On</td>';
+//    echo '<td>Created By</td>';
+//    echo '<td>Created On</td>';
     echo '</tr>';
     
     $inventoryHistory = getInventoryHistoryData();
@@ -44,9 +44,9 @@ function getInventoryHistoryTable() {
         echo '<td>' . $inventoryHistory[$i]['ProductName'] . '</td>';
         echo '<td>' . $inventoryHistory[$i]['Unit'] . '</td>';
         echo '<td>' . $inventoryHistory[$i]['Quantity'] . '</td>';
-        echo '<td>' . $inventoryHistory[$i]['CreatedBy'] . '</td>';
-        echo '<td>' . $inventoryHistory[$i]['CreatedOn'] . '</td>';
-        echo '<td><button name="'. 'eButton' . $i . '" onClick="inventoryHistoryEdit(' . $products[$i]['ID'] . ')">Edit</button></td>';
+//        echo '<td>' . $inventoryHistory[$i]['CreatedBy'] . '</td>';
+//        echo '<td>' . $inventoryHistory[$i]['CreatedOn'] . '</td>';
+//        echo '<td><button name="'. 'eButton' . $i . '" onClick="inventoryHistoryEdit(' . $inventoryHistory[$i]['ID'] . ')">Edit</button></td>';
         echo '</tr>';
     }
     echo '</table>';

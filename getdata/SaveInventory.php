@@ -34,10 +34,11 @@
             outputToText('Hello world; My id is '. $_POST['id']);
             outputToText('$sql is ' . $sql);
 
-            $sqlPrepared->bindValue(":rInventoryDate",$_POST['inventoryDate']);
-            $sqlPrepared->bindValue(":rRestaurantID", $_POST['restaurantID']);            
-            $sqlPrepared->bindValue(":rProductID", $_POST['productID']);
-            $sqlPrepared->bindValue(":rQty", $_POST['Qty']);                                        
+            outputToText($_POST['InventoryDate']);
+            $sqlPrepared->bindValue(":rInventoryDate",$_POST['InventoryDate']);
+            $sqlPrepared->bindValue(":rRestaurantID", $_POST['RestaurantID']);            
+            $sqlPrepared->bindValue(":rProductID", $_POST['ProductID']);
+            $sqlPrepared->bindValue(":rQuantity", $_POST['Quantity']);                                        
             $sqlPrepared->bindValue(":ruser", $_SESSION['user_id']);
             $sqlPrepared->execute();
             
