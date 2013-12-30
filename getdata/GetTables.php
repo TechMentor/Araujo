@@ -6,13 +6,13 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetVendors.php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetProducts.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetInventoryHistory.php';
 
-function getTable($tableType) {
+function getTable($tableType, $search = NULL) {
     switch($tableType) {
         case "InventoryHistory":
             getInventoryHistoryTable();
             break;
         case "Products":
-            getProductTable();
+            getProductTable($search);
             break;
         case "Restaurants":
             getRestaurantTable();
@@ -52,7 +52,7 @@ function getInventoryHistoryTable() {
     echo '</table>';
 }
 
-function getProductTable() {
+function getProductTable($search = NULL) {
     echo '<table border="1">';
     echo '<tr>';
     echo '<td>Product</td>';
@@ -64,7 +64,7 @@ function getProductTable() {
     echo '<td>Edit</td>';
     echo '</tr>';
     
-    $products = getProductData();
+    $products = getProductData($search);
     
     for($i = 0; $i < count($products); $i++) {
         echo '<tr>';
