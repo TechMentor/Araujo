@@ -29,6 +29,7 @@
 		display:inline-block;
 	}
 </style>
+<script src="../scripts/helpers.js"></script>
 <script src="../scripts/inventory.js"></script>
 </head>
 <body>
@@ -49,7 +50,7 @@
   <section id="form">
     <form id="inventoryHistoryProcessor">
       <label class="col1">Inventory Date </label>
-      <input id="inventoryDate" name="inventoryDate" value="<?php htmlout(date('m-d-y')) ?>">
+      <input type="date" id="inventoryDate" name="inventoryDate" >
       
       <label>Restaurant</label>
       <select id="restaurantID" name="restaurantID" >
@@ -65,7 +66,10 @@
       <input id="Qty" name="Qty" >
       
       <!-- <button onClick="currentInventoryAdd(inventoryHistoryAdd)">Add</button> -->
-      <button onClick="currentInventoryAdd()">Add</button>
+      
+      <!-- returning false prohibits the form from being submitted. (See http://stackoverflow.com/questions/7577275/jquery-ajax-requests-are-getting-cancelled-without-being-sent) -->
+      
+      <button onClick="currentInventoryAdd(); return false;">Add</button>
       <button onClick="currentInventoryFilter(inventoryHistoryFilter)">Filter</button>
       <button onClick="inventoryHistoryClear()">Clear</button>
     </form>
