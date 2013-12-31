@@ -19,11 +19,11 @@ function currentInventoryAdd() {
             "&Quantity=" + document.getElementById("Qty").value  );
 }
 
-function inventoryClear() {
-	inventoryEditing = -1;
-
-	document.getElementById("inventoryDate").value = date('m-d-y');
-	document.getElementById("restaurantID").value = "";
-	document.getElementById("productID").value = "";
-	document.getElementById("Qty").value = "";
+function inventoryFilterClear() {
+        document.getElementById("filter_restaurantID").selectedIndex = 0;
+        document.getElementById("filter_productID").selectedIndex = 0;
+	document.getElementById("filter_Qty").value = "";
+        document.getElementById("filter_inventoryDate").value = '';  //date('m/d/y');
+	inventoryEditing = -1;  
+//      document.getElementById("inventoryHistoryFilter").onsubmit="return false;"      
 }

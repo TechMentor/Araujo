@@ -70,12 +70,32 @@
       <!-- returning false prohibits the form from being submitted. (See http://stackoverflow.com/questions/7577275/jquery-ajax-requests-are-getting-cancelled-without-being-sent) -->
       
       <button onClick="currentInventoryAdd(); return false;">Add</button>
-      <button onClick="currentInventoryFilter(inventoryHistoryFilter)">Filter</button>
-      <button onClick="inventoryHistoryClear()">Clear</button>
     </form>
   </section>
   <section id="list"> <br/>
     <br/>
+
+    <form id="inventoryHistoryFilter" onsubmit="return false;">
+      <label class="col1">Inventory Date </label>
+      <input type="date" id="filter_inventoryDate" name="inventoryDate" >
+      
+      <label>Restaurant</label>
+      <select id="filter_restaurantID" name="restaurantID" >
+          <?php populateDropDown('Restaurants'); ?>
+      </select>
+      
+      <label>Product</label>
+      <select id="filter_productID" name="productID" >
+          <?php populateDropDown('Products'); ?>
+      </select>
+      
+      <label>Qty</label>
+      <input id="filter_Qty" name="Qty" >      
+      <button onClick="currentInventoryFilter(); return false">Filter</button> 
+      <button onClick="inventoryFilterClear(); return false;">Clear</button>
+    </form>
+    <br/>
+    
     <?php getTable("InventoryHistory"); ?>
   </section>
 </div>
