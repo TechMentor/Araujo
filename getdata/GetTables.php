@@ -132,3 +132,36 @@ function getVendorTable() {
     echo '</table>';
 }
 
+function getCurrentOrderTable() {
+    echo '<table border="1">';
+    echo '<tr>';
+    echo '<td>Product</td>';
+    echo '<td>Unit</td>';
+    echo '<td>Quantity</td>';
+    echo '<td>Unit Price</td>';
+    echo '<td>Ext Price</td>';
+    echo '<td>Comment</td>';
+    echo '</tr>';
+    
+    for($i = 0; $i < count($_SESSION['ProductsForOrder']); $i++) {
+        echo '<tr>';
+        echo '<td>' . $_SESSION['ProductsForOrder'][$i]['ProductID'] . '</td>';
+        echo '<td>' . $_SESSION['ProductsForOrder'][$i]['UnitID'] . '</td>';
+        echo '<td>' . $_SESSION['ProductsForOrder'][$i]['Quantity'] . '</td>';
+        echo '<td>' . $_SESSION['ProductsForOrder'][$i]['UnitPrice'] . '</td>';
+        echo '<td>' . $_SESSION['ProductsForOrder'][$i]['ExtPrice'] . '</td>';
+        echo '<td>' . $_SESSION['ProductsForOrder'][$i]['Comment'] . '</td>';
+        echo '</tr>';
+    }
+    echo '</table>';
+}
+
+function getCurrentOrderTotal() {
+    $total = 0;
+    
+    for($i = 0; $i < count($_SESSION['ProductsForOrder']); $i++) {
+        $total += $_SESSION['ProductsForOrder'][$i]['ExtPrice'];
+    }
+    
+    echo $total;
+}
