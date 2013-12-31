@@ -17,7 +17,7 @@
     </li>
     <li> <a href="#">Orders</a>
       <ul>
-        <li> <a href="../ordersAdd">Add</a> </li>
+        <li> <a href="../orders/add">Add</a> </li>
         <li> <a href="../ordersSummary">View Summary</a> </li>
         <li> <a href="../ordersDetailed">View Detailed</a> </li>
       </ul>

@@ -86,7 +86,16 @@
   </section>
   <section id="list"> <br/>
     <br/>
-    <?php getTable("Products"); ?>
+    <form method="post">
+        <input id="SearchText" name="SearchText"/>
+        <input type="submit" value="Search"/>
+        <input type="submit" value="Clear"/>
+    </form>
+    <?php if(isset($_POST['SearchText'])) { 
+                getTable("Products", $_POST['SearchText']); 
+            } else { 
+                getTable("Products", NULL); 
+            } ?>
   </section>
 </div>
 

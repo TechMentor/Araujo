@@ -1,7 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';	
 	
-function getProductData() {
+function getProductData($search = NULL) {
 	// create global array variable called $vendors
 	$products = array();
 
@@ -15,7 +15,15 @@ function getProductData() {
                 . "left outer join tblunit U on P.UnitID = U.UnitID "
                 . "left outer join tblresponsibleparty R on P.ResponsiblePartyID = R.ResponsiblePartyID "
                 . "left outer join tblvendor V on V.VendorID = P.PreferredVendorID "
+                . "WHERE ProductName LIKE :rSearch "
                 . "ORDER BY P.ProductName ");
+       
+        if($search == NULL) {
+            $sqlPrepared->bindValue(":rSearch", '%');
+        } else {
+            $sqlPrepared->bindValue(":rSearch", '%' . $search . '%');
+        }
+        
 	$sqlPrepared->execute();
 
 	$ct = 0;
