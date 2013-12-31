@@ -3,72 +3,92 @@ Created the following database objects:
 Functions:
 ============================================================================================================================
 
-fnLastInventoryDate(PID, RstID, TargetDate)
+fnLastInventoryDate($PID, $RstID, $TargetDate)
 	Purpose:	
 		Calculates the last date that an inventory was taken, on or prior to a target date, for the specified product at the specified restaurant.
 	Parameters:
-		PID - int - Product ID
-		RstID - int - RestaurantID
-		TargetDate - datetime - Target Date.  This will usually be NOW(), but can be other dates if you choose to find the last inventory date prior to a specified date/time.
+		$PID - int - Product ID
+		$RstID - int - RestaurantID
+		$TargetDate - datetime - Target Date.  This will usually be NOW(), but can be other dates if you choose to find the last inventory date prior to a specified date/time.
 ----------------------------------------------------------------------------------------------------------------------------
 	
-fnLastInventoryQty(PID, RstID, TargetDate)
+fnLastInventoryQty($PID, $RstID, $TargetDate)
 	Purpose:	
 		Calculates the quantity from the last inventory that was taken, on or prior to a target date, for the specified product at the specified restaurant.
 		
 	Parameters:
-		PID - int - Product ID
-		RstID - int - RestaurantID
-		TargetDate - datetime - Target Date.  This will usually be NOW(), but can be other dates if you choose to find the last inventory quantity prior to a specified date/time.
+		$PID - int - Product ID
+		$RstID - int - RestaurantID
+		$TargetDate - datetime - Target Date.  This will usually be NOW(), but can be other dates if you choose to find the last inventory quantity prior to a specified date/time.
 ----------------------------------------------------------------------------------------------------------------------------
 		
-fnOnOrder(PID, RstID, StartDate, EndDate)
+fnOnOrder($PID, $RstID, $StartDate, $EndDate)
 	Purpose:
 		Calculates the total quantity ordered, between the start and end dates, for the specified product at the specified restaurant  
 	
 	Parameters:
-		PID - int - Product ID
-		RstID - int - RestaurantID
-		StartDate - datetime - Start Date
-		EndDate - datetime - End Date
+		$PID - int - Product ID
+		$RstID - int - RestaurantID
+		$StartDate - datetime - Start Date
+		$EndDate - datetime - End Date
 ----------------------------------------------------------------------------------------------------------------------------
 
-fnProductName(PID)
+fnProductName($PID)
 	Purpose:
 		Calculates the product name for the specified product id.
 		
 	Parameters:
-		PID - int - Product ID
+		$PID - int - Product ID
 ----------------------------------------------------------------------------------------------------------------------------
 		
-fnRecentReceipts(PID, RstID, StartDate, EndDate) 		
+fnRecentReceipts($PID, $RstID, $StartDate, $EndDate) 		
 	Purpose:
 		Calculates the total quantity received, between the start and end dates, for the specified product at the specified restaurant  
 	
 	Parameters:
-		PID - int - Product ID
-		RstID - int - RestaurantID
-		StartDate - datetime - Start Date
-		EndDate - datetime - End Date
+		$PID - int - Product ID
+		$RstID - int - RestaurantID
+		$StartDate - datetime - Start Date
+		$EndDate - datetime - End Date
 ----------------------------------------------------------------------------------------------------------------------------
 		
-fnRestaurantName(RID)
+fnRestaurantName($RID)
 	Purpose:
 		Calculates the restaurant name for the specified restaurant id.
 		
 	Parameters:
-		RID - int - Restaurant ID		
+		$RID - int - Restaurant ID		
 ----------------------------------------------------------------------------------------------------------------------------		
 		
 Stored Procedures:
 ============================================================================================================================
 
-qryCurrentInventory(EndDate) 		
+qryCurrentInventory($EndDate) 		
 	Purpose:
-		Returns a recordset of showing the current inventory as of the EndDate.
+		Returns a recordset showing the current inventory as of the $EndDate.
 		
 	Parameters:
-		EndDate - datetime - End Date
+		$EndDate - datetime - End Date
 		
 	Example use:
 		CALL qryCurrentInventory(NOW());
+----------------------------------------------------------------------------------------------------------------------------		
+
+qryInventoryHistory($InventoryDate, $RstID, $PID, $Qty)
+
+	Purpose:
+		Returns a recordset showing the inventory history records that match the given criteria
+		
+	Parameters:
+		$InventoryDate - datetime - Date the inventory was taken
+                $RstID - int - Restaurant ID where the inventory was taken
+                $PID - int - Product ID 
+                $Qty - int - Quantity
+		
+	Example uses:
+		CALL qryInventoryHistory(NULL,0,0,0);  - returns all inventory history records
+		CALL qryInventoryHistory('2013-12-31',0,0,0);  - returns all inventory history records for Dec 31, 2013
+		CALL qryInventoryHistory(NULL,1,0,0);  - returns all inventory history records for restaurant #1
+		CALL qryInventoryHistory(NULL,0,1,0);  - returns all inventory history records for product #1
+		CALL qryInventoryHistory(NULL,0,0,100);  - returns all inventory history records with a quantity of exactly 100
+----------------------------------------------------------------------------------------------------------------------------		
