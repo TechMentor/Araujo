@@ -21,10 +21,10 @@ function addProduct(id) {
                     location.reload();
             }
         }
-    xmlrb.open("POST", "../getdata/SaveProductToOrder.php");
-    // This is required for PHP in order to populate $_POST
-    xmlrb.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlrb.send("ProductID=" + document.getElementById("ProductID").value
+        xmlrb.open("POST", "/araujo_tc/getdata/SaveProductToOrder.php");
+        // This is required for PHP in order to populate $_POST
+        xmlrb.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlrb.send("ProductID=" + document.getElementById("ProductID").value
                 + "&UnitID=" + document.getElementById("UnitID").value
                 + "&Quantity=" + document.getElementById("Quantity").value
                 + "&UnitPrice=" + document.getElementById("UnitPrice").value
