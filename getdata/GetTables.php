@@ -143,6 +143,8 @@ function getCurrentOrderTable() {
     echo '<td>Comment</td>';
     echo '</tr>';
     
+    if(!isset($_SESSION['ProductsForOrder'])) return;
+    
     for($i = 0; $i < count($_SESSION['ProductsForOrder']); $i++) {
         echo '<tr>';
         echo '<td>' . $_SESSION['ProductsForOrder'][$i]['ProductID'] . '</td>';
@@ -159,6 +161,11 @@ function getCurrentOrderTable() {
 function getCurrentOrderTotal() {
     $total = 0;
     
+    if(!isset($_SESSION['ProductsForOrder'])) {
+        echo 0;
+        return;
+    }
+        
     for($i = 0; $i < count($_SESSION['ProductsForOrder']); $i++) {
         $total += $_SESSION['ProductsForOrder'][$i]['ExtPrice'];
     }
