@@ -1,13 +1,30 @@
 function orderSave(id) {
-}
-
-function orderClear() {
-	xmlrb = new XMLHttpRequest();
-        xmlrb.onreadystatechange = function() {
-            if(xmlrb.readyState == 4 && xmlrb.status == 200) {
+    xmlrb = new XMLHttpRequest();
+    xmlrb.onreadystatechange = function() {
+    
+        if(xmlrb.readyState == 4 && xmlrb.status == 200) {
                     location.reload();
             }
         }
+        
+    xmlrb.open("POST", "/araujo_tc/getdata/SaveOrder.php");
+    // This is required for PHP in order to populate $_POST
+    xmlrb.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlrb.send("VendorID=" + document.getElementById("VendorID").value
+                + "&RestaurantID=" + document.getElementById("RestaurantID").value
+                + "&OrderDate=" + document.getElementById("OrderDate").value
+                + "&DueDate=" + document.getElementById("DueDate").value);
+}
+
+function orderClear() {
+    xmlrb = new XMLHttpRequest();
+    xmlrb.onreadystatechange = function() {
+    
+        if(xmlrb.readyState == 4 && xmlrb.status == 200) {
+                    location.reload();
+            }
+        }
+        
     xmlrb.open("POST", "/araujo_tc/getdata/ClearProductToOrder.php");
     // This is required for PHP in order to populate $_POST
     xmlrb.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

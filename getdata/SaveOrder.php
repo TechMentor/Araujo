@@ -19,12 +19,14 @@
             $sqlPrepared->bindValue(":DueDate", $_POST['DueDate']);
             $sqlPrepared->bindValue(":RestaurantID", $_POST['RestaurantID']);
             $sqlPrepared->bindValue(":user", $_SESSION['user_id']);
+            $sqlPrepared->execute();
             
-            for($i = 0; i < count($_SESSION['ProductsForOrder']); $i++) {
+            for($i = 0; $i < count($_SESSION['ProductsForOrder']); $i++) {
                 $sql = "INSERT INTO tblorderproduct (OrderID, ProductID, UnitPrice, Quantity, Comment) " .
                    "VALUES (:OrderID, :ProductID, :UnitPrice, :Quantity, :Comment)";
                 
                 $tProduct = $_SESSION['ProductsForOrder'][$i];
+                $sqlPrepared = null;
                 
                 $sqlPrepared = $pdo->prepare($sql);
                 $sqlPrepared->bindValue(":OrderID", 1);
@@ -32,6 +34,7 @@
                 $sqlPrepared->bindValue(":UnitPrice", $tProduct['UnitPrice']);
                 $sqlPrepared->bindValue(":Quantity", $tProduct['Quantity']);
                 $sqlPrepared->bindValue(":Comment", $tProduct['Comment']);
+                $sqlPrepared->execute();
             }
             
             $_SESSION['ProductsForOrder'] = array();

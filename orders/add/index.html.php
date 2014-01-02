@@ -49,21 +49,21 @@
   <section id="form">
     <form id="orderEditor">
       <label class="col1">Vendors</label>
-      <select id="PreferredVendorID" name="preferredVendorId" >
+      <select id="VendorID" name="VendorID" >
           <?php populateDropDown('Vendors'); ?>
       </select>
       
       <label class="col1">Restaurants</label>
-      <select id="restaurantID" name="restaurantId" >
+      <select id="RestaurantID" name="RestaurantID" >
           <?php populateDropDown('Restaurants'); ?>
       </select>
       <br>
       
       <label class="col2">Order Date</label>
-      <input type="date" id="orderDate" name="orderDate" >
+      <input type="date" id="OrderDate" name="OrderDate" >
       
       <label class="col1">Due Date</label>
-      <input type="date" id="dueDate" name="dueDate" >
+      <input type="date" id="DueDate" name="DueDate" >
       <br>
       
       <label class="col2">Total Price</label>
@@ -99,9 +99,9 @@
         
         <label class="col1">Comment</label>
         <input id="Comment" name="comment">
-        
-        <button onClick="addProduct(); return false;">Add</button>
     </form>
+    
+    <button onClick="addProduct(); return false;">Add</button>
     
     <?php getCurrentOrderTable(); ?>
   </section>
