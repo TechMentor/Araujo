@@ -143,7 +143,7 @@ function getCurrentOrderTable() {
     echo '<td>Comment</td>';
     echo '</tr>';
     
-    if(!isset($_SESSION['ProductsForOrder'])) return;
+    if(!isset($_SESSION['ProductsForOrder'])) { return; }
     
     for($i = 0; $i < count($_SESSION['ProductsForOrder']); $i++) {
         echo '<tr>';

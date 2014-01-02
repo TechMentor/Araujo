@@ -2,6 +2,8 @@
     include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/helpers.inc.php';
     include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
 
+    outputToText('I made it to SaveProductToOrder');
+    
     session_start();
     if(isset($_POST['ProductID'])) {
 

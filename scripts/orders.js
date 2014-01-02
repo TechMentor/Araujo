@@ -8,7 +8,7 @@ function orderClear() {
                     location.reload();
             }
         }
-    xmlrb.open("POST", "../getdata/ClearProductToOrder.php");
+    xmlrb.open("POST", "/araujo_tc/getdata/ClearProductToOrder.php");
     // This is required for PHP in order to populate $_POST
     xmlrb.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlrb.send("");	

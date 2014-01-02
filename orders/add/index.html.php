@@ -29,7 +29,7 @@
 		display:inline-block;
 	}
 </style>
-<script src="../../scripts/orders.js"></script>
+<script src="/araujo_tc/scripts/orders.js"></script>
 </head>
 <body>
 <header>
@@ -71,8 +71,8 @@
             
       <br>
       <br>
-      <button onClick="orderSave()">Save Order</button>
-      <button onClick="orderClear()">Clear Order</button>
+      <button onClick="orderSave(); return false;">Save Order</button>
+      <button onClick="orderClear(); return false;">Clear Order</button>
     </form>
   </section>
   <section id="products"> <br/>
@@ -100,7 +100,7 @@
         <label class="col1">Comment</label>
         <input id="Comment" name="comment">
         
-        <button onClick="addProduct()">Add</button>
+        <button onClick="addProduct(); return false;">Add</button>
     </form>
     
     <?php getCurrentOrderTable(); ?>
