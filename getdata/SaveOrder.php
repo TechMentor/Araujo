@@ -27,6 +27,7 @@
             $sqlPrepared = null;
             $sql = "SELECT * FROM tblorder WHERE CreatedOn LIKE :timestamp";
                 //outputToText('Insert sql is ' . $sql);
+            $sqlPrepared = $pdo->prepare($sql);
             $sqlPrepared->bindValue(":timestamp", '%'. $timestamp .'%');
             $sqlPrepared->execute();
             

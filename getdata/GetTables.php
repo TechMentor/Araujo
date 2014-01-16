@@ -4,7 +4,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc
 include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/restaurant.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetVendors.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetProducts.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetProductsByOrder.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetInventoryHistory.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetOrders.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetOrdersByID.php';
 
 function getTable($tableType, $search = NULL) {
     switch($tableType) {
@@ -19,6 +22,12 @@ function getTable($tableType, $search = NULL) {
             break;
         case "Vendors":
             getVendorTable();
+            break;
+	case "Orders":
+            getOrderTable();
+            break;
+	case "Order Detail":
+            getOrderDetailTable($search);
             break;
     }
 }
@@ -131,6 +140,67 @@ function getVendorTable() {
     }
     echo '</table>';
 }
+
+function getOrderTable() {
+    echo '<table border="1">';
+    echo '<tr>';
+    echo '<td>Order #</td>';
+    echo '<td>Order Date</td>';
+    echo '<td>Vendor Name</td>';
+    echo '<td>Due Date</td>';
+    echo '<td>Restaurant Name</td>';
+    echo '</tr>';
+    
+    $orders = getOrderData();
+    
+    for($i = 0; $i < count($orders); $i++) {
+        echo '<tr>';
+        echo '<td>' . $orders[$i]['OrderID'] . '</td>';
+        echo '<td>' . $orders[$i]['OrderDate'] . '</td>';
+        echo '<td>' . $orders[$i]['VendorName'] . '</td>';
+        echo '<td>' . $orders[$i]['DueDate'] . '</td>';
+        echo '<td>' . $orders[$i]['RestaurantName'] . '</td>';
+        echo '</tr>';
+    }
+    echo '</table>';
+}
+
+function getOrderDetailTable($orderid) {
+    $orderData = getOrderDataByID($orderid);
+    echo 'Order Date: ' . $orderData['OrderDate'] . '<br>';
+    echo 'Due Date: ' . $orderData['DueDate'] . '<br>';
+    echo 'Vendor: ' . $orderData['VendorName'] . '<br>';
+    echo 'Restaurant: ' . $orderData['RestaurantName'] . '<br>';
+
+    echo '<br><br>';
+
+    $orderTotal = 0;
+
+    echo '<table border="1">';
+    echo '<tr>';
+    echo '<td><b>Product Name</b></td>';
+    echo '<td><b>Product Price</b></td>';
+    echo '<td><b>Total Price</b></td>';
+    echo '</tr>';
+    
+    $products = getProductByOrderData($orderid);
+    
+    for($i = 0; $i < count($products); $i++) {
+        echo '<tr>';
+        echo '<td>' . $products[$i]['ProductName'] . '</td>';
+        echo '<td>' . $products[$i]['Quantity'] . ' @ ' . ' $' . $products[$i]['UnitPrice'] . '</td>';
+        echo '<td>' . '$' . $products[$i]['Quantity'] * $products[$i]['UnitPrice'] . '</td>';
+	$orderTotal += $products[$i]['Quantity'] * $products[$i]['UnitPrice'];
+        echo '</tr>';
+    }
+
+        echo '<tr>';
+        echo '<td colspan=2>' . '<b>Total:</b>' . '</td>';
+        echo '<td>' . '<b>$' . $orderTotal . '</b></td>';
+        echo '</tr>';
+    echo '</table>';
+}
+
 
 function getCurrentOrderTable() {
     echo '<table border="1">';

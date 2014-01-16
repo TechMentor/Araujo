@@ -3,7 +3,7 @@
     include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
 
     session_start();
-    if(isset($_POST['ProductName'])) {
+    if(isset($_POST['OrderDate'])) {
 
         try {
             // Save the new Productd data.
@@ -80,7 +80,7 @@
             
             outputToText("I ran the query.");
         } catch (Exception $e) {
-            htmlout("There was an issue saving a vendor.");
+            htmlout("There was an issue saving a product.");
             outputToText($e->getTrace());
         }
 }
