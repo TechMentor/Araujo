@@ -25,32 +25,98 @@ function restaurantEdit(id) {
 }
 
 function restaurantSave(id) {
-	xmlrb = new XMLHttpRequest();
-	xmlrb.onreadystatechange = function() {                
-            // alert('response:' + xmlrb.response + '\nStatus:' + xmlrb.status);
-                
-            if(xmlrb.readyState == 4 && xmlrb.status == 510) {
-                alert('response:' + xmlrb.response 
-                        + '\nStatus:' + xmlrb.status 
-                        + '\nError: ' + xmlrb.response)
-            }
-            else if(xmlrb.readyState == 4 && xmlrb.status == 200) {
-                location.reload();
-            }
+	
+	//Save restaurant validation
+	
+	if (document.getElementById("restaurantName").value == "") {
+		var errorString = "Please enter a restaurant name. ";
+	} else {
+		var errorString = "";
 	}
-	xmlrb.open("POST", "../getdata/SaveRestaurant.php");
-	// This is required for PHP in order to populate $_POST
-	xmlrb.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlrb.send("id=" + id +
-		"&name=" + document.getElementById("restaurantName").value +
-		"&ad1=" + document.getElementById("addressOne").value +
-		"&ad2=" + document.getElementById("addressTwo").value + 
-		"&city=" + document.getElementById("city").value + 
-		"&state=" + document.getElementById("state").value +
-		"&zc=" + document.getElementById("zipCode").value + 
-		"&phno=" + document.getElementById("phoneNo").value + 
-		"&fxno=" + document.getElementById("faxNo").value +
-		"&url=" + document.getElementById("website").value );
+	
+	if (document.getElementById("addressOne").value == "") {
+		errorString += "Please enter an address. ";
+	}
+	
+	if (document.getElementById("city").value == "") {
+		errorString += "Please enter a city. ";
+	}
+	
+	if (document.getElementById("state").value == "") {
+		errorString += "Please enter a state. ";
+	}
+	
+	if (document.getElementById("zipCode").value == "") {
+		errorString += "Please enter a zipcode. ";
+	}
+	
+	if (document.getElementById("phoneNo").value == "") {
+		errorString += "Please enter a phone number. ";
+	}
+	
+	if (document.getElementById("faxNo").value == "") {
+		errorString += "Please enter a fax number. ";
+	}
+	
+	if (document.getElementById("website").value == "") {
+		errorString += "Please enter a website. ";
+	}
+	
+	var zipCodeEntry = document.getElementById("zipCode").value;
+	
+	if (/^\d+$/.test(zipCodeEntry)) {
+		null;
+	} else {
+		errorString += "Invalid zipcode. ";
+	}
+	
+	var phoneEntry = document.getElementById("phoneNo").value;
+	
+	if (/^\d+$/.test(phoneEntry)) {
+		null;
+	} else {
+		errorString += "Invalid phone number. ";
+	}
+	
+	var faxEntry = document.getElementById("faxNo").value;
+	
+	if (/^\d+$/.test(faxEntry)) {
+		null;
+	} else {
+		errorString += "Invalid fax number. ";
+	}
+	
+	if (errorString == "") {
+		xmlrb = new XMLHttpRequest();
+		xmlrb.onreadystatechange = function() {                
+				// alert('response:' + xmlrb.response + '\nStatus:' + xmlrb.status);
+					
+				if(xmlrb.readyState == 4 && xmlrb.status == 510) {
+					alert('response:' + xmlrb.response 
+							+ '\nStatus:' + xmlrb.status 
+							+ '\nError: ' + xmlrb.response)
+				}
+				else if(xmlrb.readyState == 4 && xmlrb.status == 200) {
+					location.reload();
+				}
+		}
+		xmlrb.open("POST", "../getdata/SaveRestaurant.php");
+		// This is required for PHP in order to populate $_POST
+		xmlrb.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xmlrb.send("id=" + id +
+			"&name=" + document.getElementById("restaurantName").value +
+			"&ad1=" + document.getElementById("addressOne").value +
+			"&ad2=" + document.getElementById("addressTwo").value + 
+			"&city=" + document.getElementById("city").value + 
+			"&state=" + document.getElementById("state").value +
+			"&zc=" + document.getElementById("zipCode").value + 
+			"&phno=" + document.getElementById("phoneNo").value + 
+			"&fxno=" + document.getElementById("faxNo").value +
+			"&url=" + document.getElementById("website").value );
+	} else {
+		alert(errorString);
+		return false;
+	}
         
 }
 

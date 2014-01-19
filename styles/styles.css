@@ -1,10 +1,21 @@
 div#main {
-	background:#FF0;
+	background:#EBEBEB;
 	clear:both;
+	padding:5px 0;
 }
 
 div#main section {
 	margin: 1em;
-	border: 1px solid red;	
+	border: 1px solid #999;
+	padding:10px;	
+}
+
+div#main table {
+	width:100%;
+	border:#555 1px solid;
+}
+
+div#main td {
+	padding:5px;
 }
 
