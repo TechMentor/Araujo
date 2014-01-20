@@ -19,7 +19,6 @@
       <ul>
         <li> <a href="<?php echo '/araujo_tc/orders/add'?>">Add</a> </li>
         <li> <a href="<?php echo '/araujo_tc/orders/summary'?>">View Summary</a> </li>
-        <li> <a href="<?php echo '/araujo_tc/orders/detailed'?>"">View Detailed</a> </li>
       </ul>
     </li>
     <li> <a href="#">Receipts</a>

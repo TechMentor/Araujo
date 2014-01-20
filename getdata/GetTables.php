@@ -155,7 +155,11 @@ function getOrderTable() {
     
     for($i = 0; $i < count($orders); $i++) {
         echo '<tr>';
-        echo '<td>' . $orders[$i]['OrderID'] . '</td>';
+        echo '<td>';
+            echo '<a href="/araujo_tc/orders/detailed/index.php?id=' . $orders[$i]['OrderID'] . '">';
+            echo $orders[$i]['OrderID'];
+            echo '</a>';
+        echo '</td>';
         echo '<td>' . $orders[$i]['OrderDate'] . '</td>';
         echo '<td>' . $orders[$i]['VendorName'] . '</td>';
         echo '<td>' . $orders[$i]['DueDate'] . '</td>';
