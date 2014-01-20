@@ -49,7 +49,14 @@
   <section id="orders"> <br/>
     Order Detail <br/>
 
-    <?php getTable("Order Detail", 6);  ?>
+    <?php 
+        if(isset($_GET['id'])) {
+            getTable("Order Detail", $_GET['id']); 
+        }
+        else {
+            echo 'Do not access this page directly.';
+        }
+    ?>
 
   </section>
 </div>
