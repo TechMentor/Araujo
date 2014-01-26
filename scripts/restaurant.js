@@ -29,37 +29,37 @@ function restaurantSave(id) {
 	//Save restaurant validation
 	
 	if (document.getElementById("restaurantName").value == "") {
-		var errorString = "Please enter a restaurant name. ";
+		var errorString = "\n-Restaurant name is missing";
 	} else {
 		var errorString = "";
 	}
 	
 	if (document.getElementById("addressOne").value == "") {
-		errorString += "Please enter an address. ";
+		errorString += "\n-Address is missing";
 	}
 	
 	if (document.getElementById("city").value == "") {
-		errorString += "Please enter a city. ";
+		errorString += "\n-City is missing";
 	}
 	
 	if (document.getElementById("state").value == "") {
-		errorString += "Please enter a state. ";
+		errorString += "\n-State is missing";
 	}
 	
 	if (document.getElementById("zipCode").value == "") {
-		errorString += "Please enter a zipcode. ";
+		errorString += "\n-Zip code is missing";
 	}
 	
 	if (document.getElementById("phoneNo").value == "") {
-		errorString += "Please enter a phone number. ";
+		errorString += "\n-Phone number is missing";
 	}
 	
 	if (document.getElementById("faxNo").value == "") {
-		errorString += "Please enter a fax number. ";
+		errorString += "\n-Fax number is missing";
 	}
 	
 	if (document.getElementById("website").value == "") {
-		errorString += "Please enter a website. ";
+		errorString += "\n-Website is missing";
 	}
 	
 	var zipCodeEntry = document.getElementById("zipCode").value;
@@ -67,7 +67,7 @@ function restaurantSave(id) {
 	if (/^\d+$/.test(zipCodeEntry)) {
 		null;
 	} else {
-		errorString += "Invalid zipcode. ";
+		errorString += "\n-Invalid zipcode. ";
 	}
 	
 	var phoneEntry = document.getElementById("phoneNo").value;
@@ -75,7 +75,7 @@ function restaurantSave(id) {
 	if (/^\d+$/.test(phoneEntry)) {
 		null;
 	} else {
-		errorString += "Invalid phone number. ";
+		errorString += "\n-Invalid phone number.";
 	}
 	
 	var faxEntry = document.getElementById("faxNo").value;
@@ -83,7 +83,7 @@ function restaurantSave(id) {
 	if (/^\d+$/.test(faxEntry)) {
 		null;
 	} else {
-		errorString += "Invalid fax number. ";
+		errorString += "\n-Invalid fax number. ";
 	}
 	
 	if (errorString == "") {
@@ -114,7 +114,7 @@ function restaurantSave(id) {
 			"&fxno=" + document.getElementById("faxNo").value +
 			"&url=" + document.getElementById("website").value );
 	} else {
-		alert(errorString);
+		alert('Please fix the following:' + errorString);
 		return false;
 	}
         
