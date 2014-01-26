@@ -17,15 +17,19 @@
 <link href="../../styles/styles.css" rel="stylesheet">
 <style type="text/css">
 	.col1 {
-		min-width: 7em;
+		min-width: 5em;
 		display:inline-block;
 	}
 	.col2 {
-		min-width: 7em;
-		display:inline-block;		
+		min-width: 12em;
+		display:inline-block;
 	}	
-	#productName {
-		min-width: 60em;
+	.col3 {
+		min-width: 6em;
+		display:inline-block;		                
+	}	
+        #productName {
+		min-width: 20em;
 		display:inline-block;
 	}
 </style>
@@ -49,24 +53,24 @@
   <section id="form">
     <form id="orderEditor">
       <label class="col1">Vendors</label>
-      <select id="VendorID" name="VendorID" >
+      <select id="VendorID" name="VendorID" class="col2">
           <?php populateDropDown('Vendors'); ?>
       </select>
       
-      <label class="col1">Restaurants</label>
+      <label class="col3">Restaurants</label>
       <select id="RestaurantID" name="RestaurantID" >
           <?php populateDropDown('Restaurants'); ?>
       </select>
       <br>
       
-      <label class="col2">Order Date</label>
-      <input type="date" id="OrderDate" name="OrderDate" >
+      <label class="col1">Order Date</label>
+      <input type="date" id="OrderDate" name="OrderDate"  class="col2">
       
-      <label class="col1">Due Date</label>
+      <label class="col3">Due Date</label>
       <input type="date" id="DueDate" name="DueDate" >
       <br>
       
-      <label class="col2">Total Price</label>
+      <label class="col1">Total Price</label>
       <input id="TotalPrice" name="totalPrice" disabled="true" value="<?php getCurrentOrderTotal(); ?>">
             
       <br>
@@ -78,27 +82,52 @@
   <section id="products"> <br/>
     Product List <br/>
     <form id="productListEditor">
-        <label class="col1">Product</label>
-        <select id="ProductID" name="ProductID" >
-          <?php populateDropDown('Products'); ?>
-        </select>
-        
-        <label class="col1">Unit</label>
-        <select id="UnitID" name="UnitID" >
-          <?php populateDropDown('Units'); ?>
-        </select>
-        
-        <label class="col1">Quantity</label>
-        <input id="Quantity" name="quantity" onchange="calculateProductPrice()">
-        
-        <label class="col1">Unit Price</label>
-        <input id="UnitPrice" name="unitPrice" onchange="calculateProductPrice()">
-        
-        <label class="col1">Ext. Price</label>
-        <input id="ExtPrice" name="extPrice" disabled="true">
-        
-        <label class="col1">Comment</label>
-        <input id="Comment" name="comment">
+        <table border="1">
+            <tr>
+                <td>
+                    <label>Product</label>
+                </td>
+                <td>
+                    <label>Unit</label>
+                </td>
+                <td>
+                    <label>Quantity</label>
+                </td>
+                <td>
+                    <label>Unit Price</label>
+                </td>
+                <td>
+                    <label>Ext. Price</label>
+                </td>                
+            </tr>
+            <tr>
+                <td>
+                    <select id="ProductID" name="ProductID" >
+                      <?php populateDropDown('Products'); ?>
+                    </select>
+                </td>
+                <td>
+                    <select id="UnitID" name="UnitID" >
+                        <?php populateDropDown('Units'); ?>
+                    </select>
+                </td>
+                <td>
+                    <input id="Quantity" name="quantity" onchange="calculateProductPrice()">
+                </td>
+                <td>
+                    <input id="UnitPrice" name="unitPrice" onchange="calculateProductPrice()">
+                </td>
+                <td>
+                    <input id="ExtPrice" name="extPrice" disabled="true">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <label class="col1">Comment</label>
+                    <input id="Comment" name="comment">
+                </td>
+            </tr>
+        </table>       
     </form>
     
     <button onClick="addProduct(); return false;">Add</button>

@@ -11,10 +11,19 @@
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
 <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 <link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!--<link rel="apple-touch-icon" href="/apple-touch-icon.png">-->
+
+<!-- Styles using folder up one level. -->
 <link href="../styles/login.css" rel="stylesheet">
 <link href="../styles/nav.css" rel="stylesheet">
 <link href="../styles/styles.css" rel="stylesheet">
+
+<!-- Styles using folder up two levels. -->
+<link href="../../styles/login.css" rel="stylesheet">
+<link href="../../styles/nav.css" rel="stylesheet">
+<link href="../../styles/styles.css" rel="stylesheet">
+
+
 <style type="text/css"></style>
 </head>
 <body>

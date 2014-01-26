@@ -18,7 +18,7 @@
 </head>
 <body>
 <header>
-  <?php // htmlout( $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc'); ?>
+  <?php // htmlout( $_SERVER['DOCUMENT_ROOT'] . '/araujo'); ?>
   <h1>
     <script type="text/javascript">document.write(document.title)</script>
   </h1>
