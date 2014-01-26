@@ -47,7 +47,7 @@
   <section id="form">
     <form id="currentInventoryProcessor">
       <label class="col1">Report Date </label>
-      <input id="reportDate" name="reportDate" >
+      <input type="date" id="reportDate" name="reportDate" >
       <label class="col2">Restaurant</label>
       <select id="restaurantID" name="restaurantID">
           <?php populateDropDown('Restaurants'); ?>
