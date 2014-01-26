@@ -49,7 +49,7 @@
   <section id="form">
     <form id="orderEditor">
       <label class="col1">Vendors</label>
-      <select id="VendorID" name="VendorID" >
+      <select id="VendorID" name="VendorID" selectedIndex="<?php echo $_SESSION['OrderData']['Vendor']; ?>" >
           <?php populateDropDown('Vendors'); ?>
       </select>
       
