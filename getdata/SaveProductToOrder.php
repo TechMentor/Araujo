@@ -1,10 +1,10 @@
 <?php
     include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/helpers.inc.php';
     include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
-
-    outputToText('I made it to SaveProductToOrder');
     
     session_start();
+    
+    $_SESSION['OrderData']['Vendor'] = 12;
     if(isset($_POST['ProductID'])) {
 
         if(!isset($_SESSION['ProductsForOrder'])) {
