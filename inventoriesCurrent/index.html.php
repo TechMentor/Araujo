@@ -40,6 +40,8 @@
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/nav.inc.html.php'; ?>
   <!-- Show login -->
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/login.inc.html.php'; ?>
+  <!-- Include drop down queries -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetDropDowns.php'; ?>
 </header>
 <div id="main">
   <section id="form">
@@ -47,7 +49,9 @@
       <label class="col1">Report Date </label>
       <input id="reportDate" name="reportDate" >
       <label class="col2">Restaurant</label>
-      <select id="restaurantID" name="restaurantID" ></select>
+      <select id="restaurantID" name="restaurantID">
+          <?php populateDropDown('Restaurants'); ?>
+      </select>
       <button onClick="currentInventoryProcess(currentInventoryProcessing)">View</button>
       <button onClick="currentInventoryClear()">Clear</button>
     </form>
