@@ -49,6 +49,25 @@ function addProduct(id) {
                 + "&Comment=" + document.getElementById("Comment").value);
 }
 
+function orderEdit(id) {
+	orderEditing = id;
+
+	xmlra = new XMLHttpRequest();
+	xmlra.onreadystatechange = function() {
+		if(xmlra.readyState == 4 && xmlra.status == 200) {
+			var responseStr = xmlra.response;
+			var splitArry = xmlra.response.split("/-/");
+			document.getElementById("VendorID").value = splitArry[0];
+			document.getElementById("OrderDate").value = splitArry[1];
+			document.getElementById("OrderID").value = splitArry[2];
+                        document.getElementById("DueDate").value = splitArry[3]; //splitArry[3];
+			document.getElementById("RestaurantID").value = splitArry[4];
+		}
+	}
+	xmlra.open("GET", "../../getdata/GetOrderData.php?id=" + id);
+	xmlra.send();
+}
+
 function calculateProductPrice() {
     document.getElementById("ExtPrice").value = document.getElementById("UnitPrice").value * document.getElementById("Quantity").value
 }

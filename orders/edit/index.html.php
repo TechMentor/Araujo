@@ -51,6 +51,14 @@
 </header>
 <div id="main">
   <section id="form">
+      <select id="OrderID" name="OrderID" onchange="orderEdit(2)">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+      </select>
+    
     <form id="orderEditor">
       <label class="col1">Vendors</label>
       <select id="VendorID" name="VendorID" class="col2">

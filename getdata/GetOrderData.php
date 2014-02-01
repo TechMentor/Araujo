@@ -1,31 +1,36 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/helpers.inc.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';	
 	
-function getOrderData($id) {
+if(isset($_GET['id'])) {
+    try {	
 	$orders = array();
 
 	// connect to db
-        $pdo = getDBConnection();
+      $pdo = getDBConnection();
         
 	$sqlPrepared = $pdo->prepare("SELECT OrderID, OrderDate, V.VendorID, DueDate, "
                 . "R.RestaurantID " 
                 . "FROM tblorder O "
                 . "left outer join tblrestaurant R on R.RestaurantID = O.RestaurantID "
                 . "left outer join tblvendor V on V.VendorID = O.VendorID "
-                . "WHERE OrderID = :orderID"
+                . "WHERE OrderID = :orderID "
                 . "ORDER BY O.DueDate ");
        
-        $sqlPrepared->bindValue(":orderID", $id);
+      $sqlPrepared->bindValue(":orderID", $_GET['id']);
 	$sqlPrepared->execute();
 
-	$ct = 0;
-
 	while($next = $sqlPrepared->fetch()) {
-            $_SESSION['OrderData']['Vendor'] = $next['VendorID'];
-            $_SESSION['OrderData']['OrderDate'] = $next['OrderDate'];
-            $_SESSION['OrderData']['OrderID'] = $next['OrderID'];
-            $_SESSION['OrderData']['DueDate'] = $next['DueDate'];
-            $_SESSION['OrderData']['RestaurantID'] = $next['RestaurantID'];
+          $dueDateArray = date_parse($next['DueDate']);
+          $orderDateArray = date_parse($next['DueDate']);
+          
+            htmlout($next['VendorID'] . "/-/" 
+                   . date('Y-m-d', mktime(0,0,0,$orderDateArray["month"],$orderDateArray["day"],$orderDateArray["year"])) . "/-/" 
+                   . $next['OrderID'] . "/-/" 
+                   . date('Y-m-d', mktime(0,0,0,$dueDateArray["month"],$dueDateArray["day"],$dueDateArray["year"])) . "/-/" 
+                   . $next['RestaurantID'] );
 	}
+    } catch (PDOException $e) {
+    }
 }
 ?>
