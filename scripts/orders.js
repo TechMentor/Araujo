@@ -49,8 +49,8 @@ function addProduct(id) {
                 + "&Comment=" + document.getElementById("Comment").value);
 }
 
-function orderEdit(id) {
-	orderEditing = id;
+function orderEdit() {
+	orderEditing = document.getElementById("OrderID").value;
 
 	xmlra = new XMLHttpRequest();
 	xmlra.onreadystatechange = function() {
@@ -64,7 +64,7 @@ function orderEdit(id) {
 			document.getElementById("RestaurantID").value = splitArry[4];
 		}
 	}
-	xmlra.open("GET", "../../getdata/GetOrderData.php?id=" + id);
+	xmlra.open("GET", "../../getdata/GetOrderData.php?id=" + orderEditing);
 	xmlra.send();
 }
 

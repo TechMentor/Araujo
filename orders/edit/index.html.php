@@ -51,12 +51,8 @@
 </header>
 <div id="main">
   <section id="form">
-      <select id="OrderID" name="OrderID" onchange="orderEdit(2)">
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
+      <select id="OrderID" name="OrderID" onchange="orderEdit(); return false;">
+          <?php populateDropDown('OrderIDList'); ?>
       </select>
     
     <form id="orderEditor">

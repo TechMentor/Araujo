@@ -24,6 +24,9 @@ function populateDropDown($queryName, $IncludeNone = 1){
         case "Vendors":
             $strSQL = "SELECT VendorID as ID, VendorName as FriendlyValue FROM tblvendor ORDER BY VendorName";
             break;
+        case "OrderIDList":
+            $strSQL = "SELECT OrderID as ID, CONCAT('Order #',OrderID,' - ', DATE_FORMAT(OrderDate ,'%M %e, %Y'), ' from ', VendorName) as FriendlyValue FROM tblorder O left outer join tblvendor V on V.VendorID = O.VendorID ORDER BY OrderID";
+            break;
     }
     
     if($IncludeNone == 1){
