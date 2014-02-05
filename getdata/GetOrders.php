@@ -27,7 +27,7 @@ function getOrderData() {
 		$orders[$ct]['RestaurantName'] = $next['RestaurantName'];
 		$ct++;
 	}
-        
+      
         return $orders;
 }
 ?>

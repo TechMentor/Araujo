@@ -62,4 +62,3 @@
             outputToText($e->getTrace());
         }
 }
-

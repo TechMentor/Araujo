@@ -51,11 +51,10 @@
 </header>
 <div id="main">
   <section id="form">
-      <select id="OrderID" name="OrderID" onchange="orderEdit(); return false;">
-          <?php populateDropDown('OrderIDList'); ?>
-      </select>
-    
     <form id="orderEditor">
+      <select id="OrderID" name="OrderID" onchange="orderEdit();">
+          <?php populateDropDown('OrderIDList', 0); ?>
+      </select>
       <label class="col1">Vendors</label>
       <select id="VendorID" name="VendorID" class="col2">
           <?php populateDropDown('Vendors'); ?>
@@ -79,7 +78,7 @@
             
       <br>
       <br>
-      <button onClick="orderSave(); return false;">Save Order</button>
+      <button onClick="orderSave(); return false;">Update Order</button>
       <button onClick="orderClear(); return false;">Clear Order</button>
     </form>
   </section>
@@ -141,4 +140,11 @@
 </div>
 
 </body>
+<script type="text/javascript">
+    document.getElementById("OrderID").value = <?php echo $_SESSION['OrderSelected']['OrderID'] ?>;
+    document.getElementById("VendorID").value = <?php echo $_SESSION['OrderSelected']['VendorID'] ?>;
+    document.getElementById("RestaurantID").value = <?php echo $_SESSION['OrderSelected']['RestaurantID'] ?>;
+    document.getElementById("OrderDate").value = <?php echo '"' . $_SESSION['OrderSelected']['OrderDate'] . '"' ?>;
+    document.getElementById("DueDate").value = <?php echo '"' . $_SESSION['OrderSelected']['DueDate'] . '"'; ?>;
+</script>
 </html>

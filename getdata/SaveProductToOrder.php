@@ -4,7 +4,6 @@
     
     session_start();
     
-    $_SESSION['OrderData']['Vendor'] = 12;
     if(isset($_POST['ProductID'])) {
 
         if(!isset($_SESSION['ProductsForOrder'])) {
