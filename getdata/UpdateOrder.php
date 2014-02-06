@@ -5,6 +5,8 @@
     session_start();
     if(isset($_POST['OrderDate'])) {
 
+        htmlout($_POST['OrderID']);
+        
         try {
             // Save the new Productd data.
             $pdo = getDBConnection();
@@ -12,10 +14,13 @@
             $timestamp = date('Y-m-d H:i:s');
             
             $sqlPrepared = null;
-            $sql = "INSERT INTO tblorder (OrderDate, VendorID, DueDate, RestaurantID, CreatedBy, CreatedOn) " .
-                   "VALUES(:OrderDate, :VendorID, :DueDate, :RestaurantID, :user, :timestamp)";
+            $sql = "Update tblorder set OrderDate = :OrderDate, "
+                    . "VendorID = :VendorID, DueDate = :DueDate, "
+                    . "RestaurantID = :RestaurantID, CreatedBy = :user, "
+                    . "CreatedOn = :timestamp WHERE OrderID = :OrderID ";
                 //outputToText('Insert sql is ' . $sql);
             $sqlPrepared = $pdo->prepare($sql);
+            $sqlPrepared->bindValue(":OrderID", $_POST['OrderID']);
             $sqlPrepared->bindValue(":OrderDate", $_POST['OrderDate']);
             $sqlPrepared->bindValue(":VendorID", $_POST['VendorID']);
             $sqlPrepared->bindValue(":DueDate", $_POST['DueDate']);
@@ -39,7 +44,7 @@
                 throw new Exception("Error finding the order just created", '', '');
             }
             
-            for($i = 0; $i < count($_SESSION['ProductsForOrder']); $i++) {
+            /*for($i = 0; $i < count($_SESSION['ProductsForOrder']); $i++) {
                 $sql = "INSERT INTO tblorderproduct (OrderID, ProductID, UnitPrice, Quantity, Comment) " .
                    "VALUES (:OrderID, :ProductID, :UnitPrice, :Quantity, :Comment)";
                 
@@ -53,12 +58,20 @@
                 $sqlPrepared->bindValue(":Quantity", $tProduct['Quantity']);
                 $sqlPrepared->bindValue(":Comment", $tProduct['Comment']);
                 $sqlPrepared->execute();
-            }
+            }*/
             
+            $orderDateArray = date_parse($next['OrderDate']);
+            $dueDateArray = date_parse($next['DueDate']);
+            
+            $_SESSION['OrderSelected']['OrderID'] = $_POST['OrderID'];
+            $_SESSION['OrderSelected']['VendorID'] = $_POST['VendorID'];
+            $_SESSION['OrderSelected']['RestaurantID'] = $_POST['RestaurantID'];
+            $_SESSION['OrderSelected']['OrderDate'] = date('Y-m-d', mktime(0,0,0,$orderDateArray["month"],$orderDateArray["day"],$orderDateArray["year"]));
+            $_SESSION['OrderSelected']['DueDate'] = date('Y-m-d', mktime(0,0,0,$dueDateArray["month"],$dueDateArray["day"],$dueDateArray["year"]));
             $_SESSION['ProductsForOrder'] = array();
             
         } catch (Exception $e) {
             htmlout("There was an issue saving the order.");
-            outputToText($e->getTrace());
+            htmlout($e->getMessage());
         }
 }

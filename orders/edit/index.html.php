@@ -78,7 +78,7 @@
             
       <br>
       <br>
-      <button onClick="orderSave(); return false;">Update Order</button>
+      <button onClick="orderUpdate(); return false;">Update Order</button>
       <button onClick="orderClear(); return false;">Clear Order</button>
     </form>
   </section>
