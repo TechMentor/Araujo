@@ -215,6 +215,7 @@ function getCurrentOrderTable() {
     echo '<td>Unit Price</td>';
     echo '<td>Ext Price</td>';
     echo '<td>Comment</td>';
+    echo '<td></td>';
     echo '</tr>';
     
     if(!isset($_SESSION['ProductsForOrder'])) { return; }
@@ -227,6 +228,7 @@ function getCurrentOrderTable() {
         echo '<td>' . $_SESSION['ProductsForOrder'][$i]['UnitPrice'] . '</td>';
         echo '<td>' . $_SESSION['ProductsForOrder'][$i]['ExtPrice'] . '</td>';
         echo '<td>' . $_SESSION['ProductsForOrder'][$i]['Comment'] . '</td>';
+        echo '<td><button onclick="removeProduct('. $i .')">Remove</button></td>';
         echo '</tr>';
     }
     echo '</table>';

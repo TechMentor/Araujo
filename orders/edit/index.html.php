@@ -133,7 +133,7 @@
         </table>       
     </form>
     
-    <button onClick="addProduct(); return false;">Add</button>
+    <button onClick="saveProduct(); return false;">Add</button>
     
     <?php getCurrentOrderTable(); ?>
   </section>

@@ -1,7 +1,8 @@
 <?php
     include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/helpers.inc.php';
     include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
-
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/getdata/GetProductsByOrder.php';
+    
     session_start();
     if(isset($_POST['OrderDate'])) {
 
@@ -44,22 +45,6 @@
                 throw new Exception("Error finding the order just created", '', '');
             }
             
-            /*for($i = 0; $i < count($_SESSION['ProductsForOrder']); $i++) {
-                $sql = "INSERT INTO tblorderproduct (OrderID, ProductID, UnitPrice, Quantity, Comment) " .
-                   "VALUES (:OrderID, :ProductID, :UnitPrice, :Quantity, :Comment)";
-                
-                $tProduct = $_SESSION['ProductsForOrder'][$i];
-                $sqlPrepared = null;
-                
-                $sqlPrepared = $pdo->prepare($sql);
-                $sqlPrepared->bindValue(":OrderID", $orderid);
-                $sqlPrepared->bindValue(":ProductID", $tProduct['ProductID']);
-                $sqlPrepared->bindValue(":UnitPrice", $tProduct['UnitPrice']);
-                $sqlPrepared->bindValue(":Quantity", $tProduct['Quantity']);
-                $sqlPrepared->bindValue(":Comment", $tProduct['Comment']);
-                $sqlPrepared->execute();
-            }*/
-            
             $orderDateArray = date_parse($next['OrderDate']);
             $dueDateArray = date_parse($next['DueDate']);
             
@@ -68,7 +53,7 @@
             $_SESSION['OrderSelected']['RestaurantID'] = $_POST['RestaurantID'];
             $_SESSION['OrderSelected']['OrderDate'] = date('Y-m-d', mktime(0,0,0,$orderDateArray["month"],$orderDateArray["day"],$orderDateArray["year"]));
             $_SESSION['OrderSelected']['DueDate'] = date('Y-m-d', mktime(0,0,0,$dueDateArray["month"],$dueDateArray["day"],$dueDateArray["year"]));
-            $_SESSION['ProductsForOrder'] = array();
+            $_SESSION['ProductsForOrder'] = getProductByOrderData($_POST['OrderID']);
             
         } catch (Exception $e) {
             htmlout("There was an issue saving the order.");
