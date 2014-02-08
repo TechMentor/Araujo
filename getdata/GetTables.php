@@ -208,6 +208,7 @@ function getOrderDetailTable($orderid) {
 
 function getCurrentOrderTable() {
     echo '<table border="1">';
+    
     echo '<tr>';
     echo '<td>Product</td>';
     echo '<td>Unit</td>';

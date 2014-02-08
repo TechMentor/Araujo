@@ -89,7 +89,7 @@ function removeProduct(id) {
     xmlrb = new XMLHttpRequest();
     xmlrb.onreadystatechange = function() {
         if (xmlrb.readyState == 4 && xmlrb.status == 200) {
-            //location.reload();
+            location.reload();
         }
     }
     xmlrb.open("POST", "/araujo_tc/getdata/RemoveProductFromOrder.php");
