@@ -12,7 +12,23 @@
         
         for($i = 0; $i <= count($_SESSION['ProductsForOrder']) - 1; $i++) {
             
-            if($i == $_POST['ProductIndex']) { continue; }
+            if($i == $_POST['ProductIndex']) { 
+                try { 
+                    $sql = "DELETE FROM tblorderproduct WHERE " .
+                    " OrderID = :OrderID AND ProductID = :ProductID ";
+
+                    $sqlPrepared = null;
+
+                    $sqlPrepared = $pdo->prepare($sql);
+                    $sqlPrepared->bindValue(":OrderID", $_SESSION['OrderID']);
+                    $sqlPrepared->bindValue(":ProductID", $_SESSION['ProductsForOrder'][$i]['ProductID']);
+                    $sqlPrepared->execute();
+                } catch (Exception $e) {
+                    
+                }
+                
+                continue; 
+            }
             
             $_SESSION['TemporaryPFO'][$ctr] = array();
             $_SESSION['TemporaryPFO'][$ctr]['ProductID'] = $_SESSION['ProductsForOrder'][$i]['ProductID'];
