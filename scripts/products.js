@@ -21,6 +21,13 @@ function productEdit(id) {
 }
 
 function productSave(id) {
+//    alert("id=" + productEditing +
+//            "&ProductName=" + document.getElementById("ProductName").value +
+//            "&CategoryID=" + document.getElementById("CategoryID").value +
+//            "&UnitID=" + document.getElementById("UnitID").value + 
+//            "&ResponsiblePartyID=" + document.getElementById("ResponsiblePartyID").value + 
+//            "&PreferredVendorID=" + document.getElementById("PreferredVendorID").value +
+//            "&Note=" + document.getElementById("Note").value);
     xmlrb = new XMLHttpRequest();
     xmlrb.onreadystatechange = function() {
             if(xmlrb.readyState == 4 && xmlrb.status == 200) {

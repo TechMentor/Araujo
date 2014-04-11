@@ -47,7 +47,7 @@
 </header>
 <div id="main">
   <section id="form">
-    <form id="productEditor">
+      <form id="productEditor" onsubmit="return false;">
       <label class="col1">Product Name </label>
       <input id="ProductName" name="productName" >
       <br>

@@ -16,22 +16,12 @@
 <link href="../../styles/nav.css" rel="stylesheet">
 <link href="../../styles/styles.css" rel="stylesheet">
 <style type="text/css">
-	.col1 {
-		min-width: 5em;
-		display:inline-block;
-	}
-	.col2 {
-		min-width: 12em;
-		display:inline-block;
-	}	
-	.col3 {
-		min-width: 6em;
-		display:inline-block;		                
-	}	
-        #productName {
-		min-width: 20em;
-		display:inline-block;
-	}
+    #orderEditor {
+        display: table-row;
+    }
+    #orderEditor label, #orderEditor select, #orderEditor input{
+        display: table-cell;
+    }
 </style>
 <script src="/araujo_tc/scripts/orders.js"></script>
 </head>
@@ -52,30 +42,28 @@
 <div id="main">
   <section id="form">
     <form id="orderEditor">
-      <label class="col1">Vendors</label>
-      <select id="VendorID" name="VendorID" class="col2">
-          <?php populateDropDown('Vendors'); ?>
-      </select>
+      <div>
+        <label>Vendors</label>
+        <select id="VendorID" name="VendorID" >
+            <?php populateDropDown('Vendors'); ?>
+        </select>
+        <label>Restaurants</label>
+        <select id="RestaurantID" name="RestaurantID" >
+            <?php populateDropDown('Restaurants'); ?>
+        </select>
+      </div>
       
-      <label class="col3">Restaurants</label>
-      <select id="RestaurantID" name="RestaurantID" >
-          <?php populateDropDown('Restaurants'); ?>
-      </select>
-      <br>
-      
-      <label class="col1">Order Date</label>
-      <input type="date" id="OrderDate" name="OrderDate"  class="col2">
-      
-      <label class="col3">Due Date</label>
-      <input type="date" id="DueDate" name="DueDate" >
-      <br>
-      
-      <label class="col1">Total Price</label>
-      <input id="TotalPrice" name="totalPrice" disabled="true" value="<?php getCurrentOrderTotal(); ?>">
-            
-      <br>
-      <br>
-      <button onClick="orderSave(); return false;">Save Order</button>
+      <div>
+        <label>Order Date</label>
+        <input type="date" id="OrderDate" name="OrderDate">
+        <label>Due Date</label>
+        <input type="date" id="DueDate" name="DueDate" >
+      </div>     
+      <div>
+        <label>Total Price</label>
+        <input id="TotalPrice" name="totalPrice" disabled="true" value="<?php getCurrentOrderTotal(); ?>">
+      </div>
+      <button onClick="oldOrderSave(); return false;">Save Order</button>
       <button onClick="orderClear(); return false;">Clear Order</button>
     </form>
   </section>
@@ -123,7 +111,7 @@
             </tr>
             <tr>
                 <td colspan="5">
-                    <label class="col1">Comment</label>
+                    <label>Comment</label>
                     <input id="Comment" name="comment">
                 </td>
             </tr>

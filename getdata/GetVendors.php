@@ -8,7 +8,7 @@ function getVendorData() {
 	// connect to db
         $pdo = getDBConnection();
         
-	$sqlPrepared = $pdo->prepare("SELECT * FROM tblvendor");
+	$sqlPrepared = $pdo->prepare("SELECT * FROM tblvendor ORDER BY VendorName;");
 	$sqlPrepared->execute();
 
 	$ct = 0;

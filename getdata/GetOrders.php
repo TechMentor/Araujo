@@ -12,7 +12,7 @@ function getOrderData() {
                 . "FROM tblorder O "
                 . "left outer join tblrestaurant R on R.RestaurantID = O.RestaurantID "
                 . "left outer join tblvendor V on V.VendorID = O.VendorID "
-                . "ORDER BY O.DueDate ");
+                . "ORDER BY O.OrderDate DESC, OrderID DESC ");
        
 	$sqlPrepared->execute();
 

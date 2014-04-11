@@ -2,9 +2,7 @@
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
     
-function populateDropDown($queryName, $IncludeNone = 1){ 
-    htmlout('Hello world' . $queryName);
-        
+function populateDropDown($queryName, $IncludeNone = 1){        
     switch($queryName){
         case "Categories":
             $strSQL = "SELECT CategoryID as ID, CategoryName as FriendlyValue FROM tblcategory ORDER BY CategoryName";

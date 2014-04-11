@@ -17,13 +17,20 @@ function outputToText($content)
 {
     // 1/0;
     // opening for writng/append mode the results file in the log folder.
-    $h = fopen("C:\\Program Files\\Apache Software Foundation\\Apache2.2\\htdocs\\araujo\\log\\results.txt", "a+");
+    $h = fopen("C:\\Program Files\\Apache Software Foundation\\Apache2.2\\htdocs\\araujo_tc\\log\\results.txt", "a+");
     
     // write the $content value to the log
     fwrite($h, "\n" . date('Y-m-d H:i:s ') . $content);
     
     // close the results.txt file.
     fclose($h);
+}
+
+function outputPostArrayToText(){
+    outputToText('Outputting $_POST elements');
+    foreach ($_POST as $key => $entry){
+         outputToText($key . ": " . $entry);
+    }
 }
 
 // Returns NULL if expr1 = expr2 otherwise returns expr1

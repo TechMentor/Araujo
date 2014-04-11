@@ -21,12 +21,21 @@ function vendorEdit(id) {
 }
 
 function vendorSave(id) {
+        strNote = "id=" + id +
+		"&name=" + document.getElementById("vendorName").value +
+		"&ad1=" + document.getElementById("addressOne").value +
+		"&ad2=" + document.getElementById("addressTwo").value + 
+		"&city=" + document.getElementById("city").value + 
+		"&state=" + document.getElementById("state").value +
+		"&zc=" + document.getElementById("zipCode").value;        
+//        console.log(strNote);       
+
 	xmlrb = new XMLHttpRequest();
 	xmlrb.onreadystatechange = function() {
-		if(xmlrb.readyState == 4 && xmlrb.status == 200) {
+		if(xmlrb.readyState === 4 && xmlrb.status === 200) {
 			location.reload();
 		}
-	}
+	};
 	xmlrb.open("POST", "../getdata/SaveVendor.php");
 	// This is required for PHP in order to populate $_POST
 	xmlrb.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -48,6 +57,5 @@ function vendorClear() {
 	document.getElementById("city").value = "";
 	document.getElementById("state").value = "";
 	document.getElementById("zipCode").value = "";
-
 	document.getElementById("editInvLevels").disabled = true;
 }

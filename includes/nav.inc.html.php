@@ -17,6 +17,7 @@
     </li>
     <li> <a href="#">Orders</a>
       <ul>
+        <li> <a href="<?php echo '/araujo_tc/orders'?>">List and add</a> </li>
         <li> <a href="<?php echo '/araujo_tc/orders/add'?>">Add</a> </li>
         <li> <a href="<?php echo '/araujo_tc/orders/edit'?>">Edit</a> </li>
         <li> <a href="<?php echo '/araujo_tc/orders/summary'?>">View Summary</a> </li>

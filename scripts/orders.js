@@ -1,4 +1,31 @@
-function orderSave() {
+function oldOrderSave() {
+    xmlrb = new XMLHttpRequest();
+    xmlrb.onreadystatechange = function() {
+
+        if (xmlrb.readyState == 4 && xmlrb.status == 200) {
+            location.reload();
+        }
+    }
+
+    oid = -1;
+
+    try {
+        oid = document.getElementById("OrderID").value;
+    } catch (error) {
+        oid = 0;
+    }
+
+    xmlrb.open("POST", "/araujo_tc/getdata/oldSaveOrder.php");
+    // This is required for PHP in order to populate $_POST
+    xmlrb.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlrb.send("VendorID=" + document.getElementById("VendorID").value
+            + "&RestaurantID=" + document.getElementById("RestaurantID").value
+            + "&OrderDate=" + document.getElementById("OrderDate").value
+            + "&DueDate=" + document.getElementById("DueDate").value
+            + "&OrderID=" + oid);
+}
+
+function OrderSave() {
     xmlrb = new XMLHttpRequest();
     xmlrb.onreadystatechange = function() {
 

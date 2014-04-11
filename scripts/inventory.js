@@ -27,3 +27,27 @@ function inventoryFilterClear() {
 	inventoryEditing = -1;  
 //      document.getElementById("inventoryHistoryFilter").onsubmit="return false;"      
 }
+
+function currentInventoryFilter() {
+    alert('currentInventoryFilter function is now running.');
+    alert("InventoryDate=" + document.getElementById("filter_inventoryDate").value +
+            "&RestaurantID=" + document.getElementById("filter_restaurantID").value +
+            "&ProductID=" + document.getElementById("filter_productID").value + 
+            "&Quantity=" + document.getElementById("filter_Qty").value);
+    xmlrc = new XMLHttpRequest();
+    xmlrc.onreadystatechange = function() {            
+       // alert('Ready state has changed to ' + xmlrc.readyState + "\n" + ' and status is ' + xmlrc.status + '.');
+        if(xmlrc.readyState == 4 && xmlrc.status == 200) {
+            //alert('Ready state has changed to ' + xmlrc.readyState + "\n" + ' and status is ' + xmlrc.status + '.');
+            location.reload();
+        }
+    }        
+    xmlrc.open("POST", "../getdata/GetInventoryHistory.php");
+    // This is required for PHP in order to populate $_POST
+    xmlrc.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlrc.send("id=" + inventoryEditing + 
+            "&InventoryDate=" + document.getElementById("filter_inventoryDate").value +
+            "&RestaurantID=" + document.getElementById("filter_restaurantID").value +
+            "&ProductID=" + document.getElementById("filter_productID").value + 
+            "&Quantity=" + document.getElementById("filter_Qty").value  );
+}

@@ -1,5 +1,14 @@
 var restaurantEditing = -1;
 
+function showFieldNotes(NewText) {
+    document.getElementById("fieldNotes").innerHTML = NewText;
+}
+
+function clearFieldNotes() {
+    document.getElementById("fieldNotes").innerHTML = "&nbsp;";
+}
+
+
 function restaurantEdit(id) {
 	restaurantEditing = id;
 
@@ -54,13 +63,13 @@ function restaurantSave(id) {
 		errorString += "\n-Phone number is missing";
 	}
 	
-	if (document.getElementById("faxNo").value == "") {
-		errorString += "\n-Fax number is missing";
-	}
+//	if (document.getElementById("faxNo").value == "") {
+//		errorString += "\n-Fax number is missing";
+//	}
 	
-	if (document.getElementById("website").value == "") {
-		errorString += "\n-Website is missing";
-	}
+//	if (document.getElementById("website").value == "") {
+//		errorString += "\n-Website is missing";
+//	}
 	
 	var zipCodeEntry = document.getElementById("zipCode").value;
 	
@@ -72,19 +81,25 @@ function restaurantSave(id) {
 	
 	var phoneEntry = document.getElementById("phoneNo").value;
 	
-	if (/^\d+$/.test(phoneEntry)) {
-		null;
-	} else {
-		errorString += "\n-Invalid phone number.";
-	}
-	
+//      if (/^\d+$/.test(phoneEntry)) {
+        if (phoneEntry.length > 0) { 
+            if (/^[2-9]\d{2}-\d{3}-\d{4}$/.test(phoneEntry)) {	
+                    null;
+            } else {
+                    errorString += "\n-Invalid phone number.";
+            }
+        }
+
 	var faxEntry = document.getElementById("faxNo").value;
 	
-	if (/^\d+$/.test(faxEntry)) {
-		null;
-	} else {
-		errorString += "\n-Invalid fax number. ";
-	}
+//	if (/^\d+$/.test(faxEntry)) {
+        if (faxEntry.length > 0) { 
+            if (/^[2-9]\d{2}-\d{3}-\d{4}$/.test(faxEntry)) {
+                    null;
+            } else {
+                    errorString += "\n-Invalid fax number. ";
+            }
+        }
 	
 	if (errorString == "") {
 		xmlrb = new XMLHttpRequest();

@@ -49,7 +49,6 @@
   <section id="orders"> <br/>
     Orders List <br/>
     <?php getTable("Orders", NULL);  ?>
-
   </section>
 </div>
 

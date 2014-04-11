@@ -125,7 +125,11 @@ function getVendorTable() {
     echo '<table border="1">';
     echo '<tr>';
     echo '<td>Vendor</td>';
-    echo '<td>Address</td>';
+    echo '<td>Address 1</td>';
+    echo '<td>Address 2</td>';
+    echo '<td>City</td>';
+    echo '<td>State</td>';
+    echo '<td>Zip Code</td>';
     echo '<td>Edit</td>';
     echo '</tr>';
     
@@ -134,7 +138,11 @@ function getVendorTable() {
     for($i = 0; $i < count($vendors); $i++) {
         echo '<tr>';
         echo '<td>' . $vendors[$i]['Name'] . '</td>';
-        echo '<td>' . trim($vendors[$i]['AddressOne'] . " " . $vendors[$i]['AddressTwo']) . '</td>';
+        echo '<td>' . trim($vendors[$i]['AddressOne']) . '</td>';
+        echo '<td>' . trim($vendors[$i]['AddressTwo']) . '</td>';
+        echo '<td>' . trim($vendors[$i]['City']) . '</td>';
+        echo '<td>' . trim($vendors[$i]['State']) . '</td>';
+        echo '<td>' . trim($vendors[$i]['ZipCode']) . '</td>';
         echo '<td><button name="'. 'eButton' . $i . '" onClick="vendorEdit(' . $vendors[$i]['ID'] . ')">Edit</button></td>';
         echo '</tr>';
     }
@@ -207,11 +215,10 @@ function getOrderDetailTable($orderid) {
 
 
 function getCurrentOrderTable() {
-    echo '<table border="1">';
-    
+    echo '<table border="1">';    
     echo '<tr>';
-    echo '<td>Product</td>';
-    echo '<td>Unit</td>';
+    echo '<td>Product Name</td>';
+    echo '<td>Unit Name</td>';
     echo '<td>Quantity</td>';
     echo '<td>Unit Price</td>';
     echo '<td>Ext Price</td>';
@@ -223,8 +230,8 @@ function getCurrentOrderTable() {
     
     for($i = 0; $i < count($_SESSION['ProductsForOrder']); $i++) {
         echo '<tr>';
-        echo '<td>' . $_SESSION['ProductsForOrder'][$i]['ProductID'] . '</td>';
-        echo '<td>' . $_SESSION['ProductsForOrder'][$i]['UnitID'] . '</td>';
+        echo '<td>' . $_SESSION['ProductsForOrder'][$i]['ProductName'] . '</td>';
+        echo '<td>' . $_SESSION['ProductsForOrder'][$i]['UnitName'] . '</td>';
         echo '<td>' . $_SESSION['ProductsForOrder'][$i]['Quantity'] . '</td>';
         echo '<td>' . $_SESSION['ProductsForOrder'][$i]['UnitPrice'] . '</td>';
         echo '<td>' . $_SESSION['ProductsForOrder'][$i]['ExtPrice'] . '</td>';

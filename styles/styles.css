@@ -11,7 +11,7 @@ div#main section {
 }
 
 div#main table {
-	width:100%;
+	/*width:95%;*/
 	border:#555 1px solid;
 }
 
@@ -19,3 +19,6 @@ div#main td {
 	padding:5px;
 }
 
+.required {
+    background-color: #ffffcc; 
+}

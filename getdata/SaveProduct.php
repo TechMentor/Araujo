@@ -3,9 +3,18 @@
     include_once $_SERVER['DOCUMENT_ROOT'] . '/araujo_tc' . '/includes/dbconnect.inc.php';
 
     session_start();
-    if(isset($_POST['OrderDate'])) {
-
-        try {
+    outputToText('Running Save Product');
+//    outputToText('productName is ' . $_POST['ProductName']);
+//    outputToText('id is ' . $_POST['id']);
+    
+//    foreach ($_POST as $key => $entry){
+//         outputToText($key . ": " . $entry);
+//    }
+    
+    if(isset($_POST['ProductName'])) {        
+        try {            
+//            outputToText('Trying SaveProduct');
+            
             // Save the new Productd data.
             $pdo = getDBConnection();
 
@@ -80,6 +89,7 @@
             
             outputToText("I ran the query.");
         } catch (Exception $e) {
+            outputToText('catching SaveProduct');
             htmlout("There was an issue saving a product.");
             outputToText($e->getTrace());
         }
